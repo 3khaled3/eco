@@ -52,13 +52,13 @@ class Home extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Text(S.of(context).test, style: BoxStyles.bold322,),
+          Text(S.of(context).test, style: BoxStyles.bold32,),
           Center(
             child: ElevatedButton(
               onPressed: () => context.read<SettingsCubit>().toggleTheme(),
               child: Text(
                 'Toggle Theme',
-                style: BoxStyles.regular166.copyWith(fontSize: 44),
+                style: BoxStyles.regular16.copyWith(fontSize: 44),
               ),
             ),
           ),

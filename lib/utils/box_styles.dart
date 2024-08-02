@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class BoxStyles {
-  static const bold322 = TextStyle(
+  static const bold32 = TextStyle(
     fontWeight: FontWeight.w700,
     fontSize: 32.0,
   );
@@ -18,12 +18,12 @@ class BoxStyles {
     fontSize: 24.0,
   );
 
-  static const medium244 = TextStyle(
+  static const medium24 = TextStyle(
     fontWeight: FontWeight.w500,
     fontSize: 24.0,
   );
 
-  static const regular244 = TextStyle(
+  static const regular24 = TextStyle(
     fontWeight: FontWeight.w400,
     fontSize: 24.0,
   );
@@ -32,12 +32,12 @@ class BoxStyles {
     fontSize: 16.0,
   );
 
-  static const medium166 = TextStyle(
+  static const medium16 = TextStyle(
     fontWeight: FontWeight.w500,
     fontSize: 16.0,
   );
 
-  static const regular166 = TextStyle(
+  static const regular16 = TextStyle(
     fontWeight: FontWeight.w400,
     fontSize: 16.0,
   );
@@ -47,12 +47,12 @@ class BoxStyles {
     fontSize: 12.0,
   );
 
-  static const medium122 = TextStyle(
+  static const medium12 = TextStyle(
     fontWeight: FontWeight.w500,
     fontSize: 12.0,
   );
 
-  static const regular122 = TextStyle(
+  static const regular12 = TextStyle(
     fontWeight: FontWeight.w400,
     fontSize: 12.0,
   );
