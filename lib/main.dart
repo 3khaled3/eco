@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
+import 'features/home_feature/view/widget/bottom_nav_bar_widget.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -24,12 +26,12 @@ class MyApp extends StatelessWidget {
             theme: state.theme,
             locale: state.locale,
             localizationsDelegates: const [
-              S.delegate,
+              GetTranslation.delegate,
               GlobalMaterialLocalizations.delegate,
               GlobalWidgetsLocalizations.delegate,
               GlobalCupertinoLocalizations.delegate,
             ],
-            supportedLocales: S.delegate.supportedLocales,
+            supportedLocales: GetTranslation.delegate.supportedLocales,
             title: 'Flutter Demo',
             home: const Home(),
           );
@@ -39,23 +41,32 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({super.key});
 
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  int currentPageIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          S.of(context).test,
+          GetTranslation.of(context).test,
         ),
       ),
       body: Column(
         children: [
-          Text(S.of(context).test, style: BoxStyles.bold32,),
+          Text(
+            GetTranslation.of(context).test,
+            style: BoxStyles.bold32,
+          ),
           Center(
             child: ElevatedButton(
-              onPressed: () => context.read<SettingsCubit>().toggleTheme(),
+              onPressed: () => BlocProvider.of<SettingsCubit>(context).toggleLanguage(),
               child: Text(
                 'Toggle Theme',
                 style: BoxStyles.regular16.copyWith(fontSize: 44),
@@ -63,6 +74,14 @@ class Home extends StatelessWidget {
             ),
           ),
         ],
+      ),
+      bottomNavigationBar: BottomNavBarWidget(
+        currentPageIndex: currentPageIndex,
+        onTap: (int index) {
+          setState(() {
+            currentPageIndex = index;
+          });
+        },
       ),
     );
   }
