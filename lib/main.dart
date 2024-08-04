@@ -1,3 +1,4 @@
+import 'package:eco/features/home_feature/view/home_view.dart';
 import 'package:eco/generated/l10n.dart';
 import 'package:eco/utils/Settings_state.dart';
 import 'package:eco/utils/box_styles.dart';
@@ -5,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-import 'features/home_feature/view/widget/bottom_nav_bar_widget.dart';
+import 'features/home_feature/view/widget/widget_import.dart';
 
 void main() {
   runApp(const MyApp());
@@ -50,31 +51,16 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int currentPageIndex = 0;
+  List<Widget> pages = [
+    const HomeView(),
+    const CategoriesBody(),
+    const CategoriesBody(),
+    const CategoriesBody(),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          GetTranslation.of(context).test,
-        ),
-      ),
-      body: Column(
-        children: [
-          Text(
-            GetTranslation.of(context).test,
-            style: BoxStyles.bold32,
-          ),
-          Center(
-            child: ElevatedButton(
-              onPressed: () => BlocProvider.of<SettingsCubit>(context).toggleLanguage(),
-              child: Text(
-                'Toggle Theme',
-                style: BoxStyles.regular16.copyWith(fontSize: 44),
-              ),
-            ),
-          ),
-        ],
-      ),
+      body: pages[currentPageIndex],
       bottomNavigationBar: BottomNavBarWidget(
         currentPageIndex: currentPageIndex,
         onTap: (int index) {

@@ -19,7 +19,7 @@ class GetTranslation {
 
   static GetTranslation get current {
     assert(_current != null,
-        'No instance of S was loaded. Try to initialize the S delegate before accessing GetTranslation.current.');
+        'No instance of GetTranslation was loaded. Try to initialize the GetTranslation delegate before accessing GetTranslation.current.');
     return _current!;
   }
 
@@ -42,7 +42,7 @@ class GetTranslation {
   static GetTranslation of(BuildContext context) {
     final instance = GetTranslation.maybeOf(context);
     assert(instance != null,
-        'No instance of S present in the widget tree. Did you add GetTranslation.delegate in localizationsDelegates?');
+        'No instance of GetTranslation present in the widget tree. Did you add GetTranslation.delegate in localizationsDelegates?');
     return instance!;
   }
 

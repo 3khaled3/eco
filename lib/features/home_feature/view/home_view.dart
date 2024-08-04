@@ -1,0 +1,56 @@
+import 'package:flutter/material.dart';
+import 'widget/widget_import.dart';
+
+part 'home_body.dart';
+part 'categories_body.dart';
+
+class HomeView extends StatefulWidget {
+  const HomeView({super.key});
+
+  @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView>
+    with SingleTickerProviderStateMixin {
+  int currentPageIndex = 0;
+  late TabController _tabController;
+
+  @override
+  void initState() {
+    _tabController = TabController(vsync: this, length: 2);
+
+    super.initState();
+  }
+
+  List<Widget> pages = [
+    const HomeBody(),
+    const CategoriesBody(),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Padding(
+        padding: const EdgeInsetsDirectional.only(start: 24, end: 24),
+        child: Column(
+          children: [
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 8.0),
+              child: HomeAppBar(),
+            ),
+            HomeTabBar(
+              tabController: _tabController,
+              onTap: (value) {
+                setState(() {
+                  _tabController.index = value;
+                });
+              },
+            ),
+            Expanded(child: pages[_tabController.index])
+          ],
+        ),
+      ),
+    );
+  }
+}

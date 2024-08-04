@@ -1,5 +1,4 @@
-import 'package:eco/utils/colors_box.dart';
-import 'package:flutter/material.dart';
+part of 'widget_import.dart';
 
 class BottomNavBarWidget extends StatelessWidget {
   const BottomNavBarWidget({

@@ -1,3 +1,4 @@
+import 'package:eco/utils/colors_box.dart';
 import 'package:flutter/material.dart';
 import 'package:bloc/bloc.dart';
 
@@ -18,8 +19,11 @@ class SettingsCubit extends Cubit<SettingsState> {
   static ThemeData _getLightTheme(String lang) {
     return ThemeData(
       fontFamily: lang == 'en' ? 'Montserrat' : 'NotoKufiArabic',
-      brightness: Brightness.light,
       primaryColor: Colors.purple,
+      colorScheme: const ColorScheme.light().copyWith(
+        brightness: Brightness.light,
+        secondary: BoxColors.whiteTwo,
+      ),
       visualDensity: VisualDensity.adaptivePlatformDensity,
     );
   }
@@ -27,8 +31,11 @@ class SettingsCubit extends Cubit<SettingsState> {
   static ThemeData _getDarkTheme(String lang) {
     return ThemeData(
       fontFamily: lang == 'en' ? 'Montserrat' : 'NotoKufiArabic',
-      brightness: Brightness.dark,
-      primarySwatch: Colors.blue,
+      colorScheme: const ColorScheme.dark().copyWith(
+        secondary: BoxColors.darkTwo,
+        brightness: Brightness.dark,
+      ),
+      primaryColor: Colors.purple,
     );
   }
 
