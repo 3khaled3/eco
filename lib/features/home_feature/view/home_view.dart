@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'categories_body.dart';
+import 'home_body.dart';
 import 'widget/widget_import.dart';
-
-part 'home_body.dart';
-part 'categories_body.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});

@@ -1,4 +1,6 @@
-part of 'home_view.dart';
+import 'package:flutter/material.dart';
+
+import 'widget/widget_import.dart';
 
 class HomeBody extends StatelessWidget {
   const HomeBody({super.key});
@@ -8,18 +10,9 @@ class HomeBody extends StatelessWidget {
     return ListView(
       children: const [
         ImageSlider(),
-        ShowAllRow(),
-        Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [ProductCard(), ProductCard()]),
-        SizedBox(height: 10),
-        Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [ProductCard(), ProductCard()]),
-             SizedBox(height: 10),
-        Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [ProductCard(), ProductCard()]),
+        SizedBox(height: 8),
+        HomeProductBuilder(),
+        HomeProductBuilder(),
       ],
     );
   }

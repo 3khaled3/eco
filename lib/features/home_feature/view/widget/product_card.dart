@@ -67,6 +67,7 @@ class ProductCard extends StatelessWidget {
   }
 }
 
+/// <---- product image ---->///
 class _ProductImage extends StatelessWidget {
   const _ProductImage();
 
@@ -86,6 +87,7 @@ class _ProductImage extends StatelessWidget {
   }
 }
 
+/// <---- rating ---->///
 class _Rating extends StatelessWidget {
   const _Rating();
 
@@ -111,6 +113,7 @@ class _Rating extends StatelessWidget {
   }
 }
 
+/// <---- favorite button ---->///
 class _FavoriteButton extends StatelessWidget {
   const _FavoriteButton();
 
@@ -131,6 +134,9 @@ class _FavoriteButton extends StatelessWidget {
           child: const Icon(
             Icons.favorite_rounded,
             color: Colors.red,
+            //todo: used to un favorite
+            // Icons.favorite_outline_rounded,
+            // color: Colors.black,
             size: 16,
           ),
         ),

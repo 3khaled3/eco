@@ -11,3 +11,5 @@ part 'bottom_nav_bar_widget.dart';
 part 'image_slider.dart';
 part 'show_all_row.dart';
 part 'product_card.dart';
+part 'home_product_builder.dart';
+part 'category_card.dart';
