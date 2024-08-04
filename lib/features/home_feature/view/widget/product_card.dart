@@ -7,55 +7,59 @@ class ProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        InkWell(
-          onTap: () {},
-          borderRadius: BorderRadius.circular(16),
-          child: Container(
-            height: 280,
-            width: 165,
-            decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.secondary,
-              borderRadius: BorderRadius.circular(16),
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                /// <---- product image ---->///
-                const _ProductImage(),
+        Material(
+          color: Colors.transparent,
+          child: InkWell(
+            onTap: () {},
+            borderRadius: BorderRadius.circular(16),
+            child: Ink(
+              height: 280,
+              width: 165,
+              decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.secondary,
+                borderRadius: BorderRadius.circular(16),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  /// <---- product image ---->///
+                  const _ProductImage(),
 
-                /// <---- product name ---->///
-                const Padding(
-                  padding:
-                      EdgeInsetsDirectional.only(top: 8, bottom: 8, start: 4),
-                  child: Text('Product Name', style: BoxStyles.medium12),
-                ),
-
-                /// <---- product price ---->///
-                Padding(
-                  padding: const EdgeInsetsDirectional.symmetric(horizontal: 8),
-                  child: Row(
-                    children: [
-                      /// <---- product current price ---->///
-                      const Text(' \$200', style: BoxStyles.bold12),
-                      const SizedBox(width: 8),
-
-                      /// <---- product old price ---->///
-                      Text(
-                        ' \$200',
-                        style: BoxStyles.medium12.copyWith(
-                          decoration: TextDecoration.lineThrough,
-                          decorationColor: Colors.grey,
-                          color: Colors.grey,
-                        ),
-                      ),
-                      const Spacer(),
-
-                      /// <---- product _Rating ---->///
-                      const _Rating(),
-                    ],
+                  /// <---- product name ---->///
+                  const Padding(
+                    padding:
+                        EdgeInsetsDirectional.only(top: 8, bottom: 8, start: 4),
+                    child: Text('Product Name', style: BoxStyles.medium12),
                   ),
-                ),
-              ],
+
+                  /// <---- product price ---->///
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.symmetric(horizontal: 8),
+                    child: Row(
+                      children: [
+                        /// <---- product current price ---->///
+                        const Text(' \$200', style: BoxStyles.bold12),
+                        const SizedBox(width: 8),
+
+                        /// <---- product old price ---->///
+                        Text(
+                          ' \$200',
+                          style: BoxStyles.medium12.copyWith(
+                            decoration: TextDecoration.lineThrough,
+                            decorationColor: Colors.grey,
+                            color: Colors.grey,
+                          ),
+                        ),
+                        const Spacer(),
+
+                        /// <---- product _Rating ---->///
+                        const _Rating(),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),

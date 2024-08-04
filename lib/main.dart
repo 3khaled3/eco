@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
+import 'features/home_feature/view/categories_body.dart';
 import 'features/home_feature/view/widget/widget_import.dart';
 
 void main() {
