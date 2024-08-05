@@ -1,12 +1,12 @@
-import 'package:eco/features/home_feature/view/home_view.dart';
+import 'package:eco/features/home/view/home_view.dart';
 import 'package:eco/utils/localization/generated/l10n.dart';
 import 'package:eco/utils/Settings_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-import 'features/home_feature/view/categories_body.dart';
-import 'features/home_feature/view/widget/widget_import.dart';
+import 'features/home/view/categories_body.dart';
+import 'features/home/view/widget/widget_import.dart';
 
 void main() {
   runApp(const MyApp());
