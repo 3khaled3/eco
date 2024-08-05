@@ -1,4 +1,5 @@
 import 'package:eco/features/home/view/home_view.dart';
+import 'package:eco/features/search/view/search_view.dart';
 import 'package:eco/utils/localization/generated/l10n.dart';
 import 'package:eco/utils/Settings_state.dart';
 import 'package:flutter/material.dart';
@@ -53,14 +54,14 @@ class _HomeState extends State<Home> {
   int currentPageIndex = 0;
   List<Widget> pages = [
     const HomeView(),
-    const CategoriesBody(),
+    const SearchView(),
     const CategoriesBody(),
     const CategoriesBody(),
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: pages[currentPageIndex],
+      body: SafeArea(child: pages[currentPageIndex]),
       bottomNavigationBar: BottomNavBarWidget(
         currentPageIndex: currentPageIndex,
         onTap: (int index) {

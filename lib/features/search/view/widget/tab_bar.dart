@@ -48,7 +48,7 @@ class _TabBarWidgetState extends State<TabBarWidget>
           indicatorWeight: 0.1,
           labelPadding: const EdgeInsets.symmetric(horizontal: 4),
           indicatorSize: TabBarIndicatorSize.tab,
-          unselectedLabelColor: BoxColors.black50,
+          unselectedLabelColor:Colors.grey ,
           labelColor: BoxColors.white,
           indicatorPadding: const EdgeInsets.symmetric(horizontal: 4),
           onTap: (value) {
