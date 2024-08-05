@@ -1,7 +1,6 @@
 import 'package:eco/features/home_feature/view/home_view.dart';
-import 'package:eco/generated/l10n.dart';
+import 'package:eco/utils/localization/generated/l10n.dart';
 import 'package:eco/utils/Settings_state.dart';
-import 'package:eco/utils/box_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';

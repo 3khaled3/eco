@@ -59,6 +59,66 @@ class GetTranslation {
       args: [],
     );
   }
+
+  /// `new en`
+  String get neww {
+    return Intl.message(
+      'new en',
+      name: 'neww',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `see all`
+  String get seeAll {
+    return Intl.message(
+      'see all',
+      name: 'seeAll',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `product name`
+  String get productName {
+    return Intl.message(
+      'product name',
+      name: 'productName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `top selling`
+  String get topSelling {
+    return Intl.message(
+      'top selling',
+      name: 'topSelling',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` Welcome`
+  String get welcome {
+    return Intl.message(
+      ' Welcome',
+      name: 'welcome',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `start shopping now`
+  String get startShopping {
+    return Intl.message(
+      'start shopping now',
+      name: 'startShopping',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<GetTranslation> {

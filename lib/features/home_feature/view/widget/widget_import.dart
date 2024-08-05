@@ -1,4 +1,5 @@
 import 'package:eco/utils/colors_box.dart';
+import 'package:eco/utils/localization/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:eco/utils/Settings_state.dart';
 import 'package:eco/utils/box_styles.dart';

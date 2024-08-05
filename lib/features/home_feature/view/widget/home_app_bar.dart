@@ -21,15 +21,15 @@ class HomeAppBar extends StatelessWidget {
         const SizedBox(width: 10),
 
         ///<----- user name ----->///
-        const Column(
+        Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Welcome, omar',
+              GetTranslation.of(context).welcome,
               style: BoxStyles.bold16,
             ),
             Text(
-              'start Shopping now',
+              GetTranslation.of(context).startShopping,
               style: BoxStyles.regular16,
             ),
           ],

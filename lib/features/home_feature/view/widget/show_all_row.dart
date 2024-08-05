@@ -7,9 +7,9 @@ class ShowAllRow extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const Text('Top Selling', style: BoxStyles.bold16),
+         Text(GetTranslation.of(context).topSelling, style: BoxStyles.bold16),
         TextButton(
-          child: const Text('see All', style: BoxStyles.medium16),
+          child:  Text(GetTranslation.of(context).seeAll, style: BoxStyles.medium16),
           onPressed: () {},
         )
       ],

@@ -26,10 +26,10 @@ class ProductCard extends StatelessWidget {
                   const _ProductImage(),
 
                   /// <---- product name ---->///
-                  const Padding(
+                   Padding(
                     padding:
                         EdgeInsetsDirectional.only(top: 8, bottom: 8, start: 4),
-                    child: Text('Product Name', style: BoxStyles.medium12),
+                    child: Text(GetTranslation.of(context).productName, style: BoxStyles.medium12),
                   ),
 
                   /// <---- product price ---->///
