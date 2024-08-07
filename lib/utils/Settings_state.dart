@@ -10,19 +10,28 @@ class SettingsState {
 }
 
 class SettingsCubit extends Cubit<SettingsState> {
-  SettingsCubit()
+  static final SettingsCubit _singleton = SettingsCubit._internal();
+
+  factory SettingsCubit() {
+    return _singleton;
+  }
+
+  SettingsCubit._internal()
       : super(SettingsState(
           locale: const Locale('en'),
           theme: _getLightTheme('en'),
         ));
 
+  bool isDarkTheme() => state.theme.brightness == Brightness.dark;
+
   static ThemeData _getLightTheme(String lang) {
     return ThemeData(
       fontFamily: lang == 'en' ? 'Montserrat' : 'NotoKufiArabic',
-      primaryColor: Colors.purple,
+      primaryColor: ColorsBox.lighterPurple,
       colorScheme: const ColorScheme.light().copyWith(
         brightness: Brightness.light,
-        secondary: BoxColors.whiteTwo,
+        secondary: ColorsBox.whiteTwo,
+        secondaryFixed: ColorsBox.black,
       ),
       visualDensity: VisualDensity.adaptivePlatformDensity,
     );
@@ -32,10 +41,11 @@ class SettingsCubit extends Cubit<SettingsState> {
     return ThemeData(
       fontFamily: lang == 'en' ? 'Montserrat' : 'NotoKufiArabic',
       colorScheme: const ColorScheme.dark().copyWith(
-        secondary: BoxColors.darkTwo,
+        secondary: ColorsBox.darkTwo,
+        secondaryFixed: ColorsBox.white,
         brightness: Brightness.dark,
       ),
-      primaryColor: Colors.purple,
+      primaryColor: ColorsBox.lighterPurple,
     );
   }
 

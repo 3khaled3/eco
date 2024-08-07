@@ -72,7 +72,7 @@ class _DotWidget extends StatelessWidget {
       height: 7,
       margin: const EdgeInsets.symmetric(horizontal: 3),
       decoration: BoxDecoration(
-        color: isSelected ? BoxColors.lighterPurple : Colors.grey,
+        color: isSelected ? ColorsBox.lighterPurple : Colors.grey,
         shape: BoxShape.circle,
       ),
     );

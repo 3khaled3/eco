@@ -1,14 +1,17 @@
-import 'package:eco/features/search/view/widget/search_text_faild.dart';
-import 'package:eco/features/search/view/widget/tab_bar.dart';
+import 'package:eco/features/home/view/widget/widget_import.dart';
+import 'package:eco/features/search/view/widget/category_tab_bar.dart';
+import 'package:eco/utils/box_styles.dart';
 import 'package:eco/utils/localization/generated/l10n.dart';
 import 'package:flutter/material.dart';
+
+import 'widget/search_app_bar.dart';
 
 class SearchView extends StatelessWidget {
   const SearchView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    String? currentCategory;
+    // String? currentCategory;
     final List<String> categories = [
       GetTranslation.of(context).startShopping,
       GetTranslation.of(context).productName,
@@ -18,26 +21,52 @@ class SearchView extends StatelessWidget {
       GetTranslation.of(context).welcome,
       GetTranslation.of(context).productName,
     ];
-    currentCategory = categories.first;
+    // currentCategory = categories.first;
     return StatefulBuilder(builder: (BuildContext context, setState) {
-      return Column(
+      return ListView(
         children: [
-          SearchTextField(onSearchChanged: (value) {
-            print(value);
-          }),
-          TabBarWidget(
-            categories: categories,
-            onTap: (selectedCategory) {
-              currentCategory = selectedCategory;
-              setState(() {});
-              print(selectedCategory);
-            },
-          ),
-          Expanded(
-            child: Center(
-              child: Text(currentCategory!),
+          const SearchAppBar(),
+          Padding(
+            padding: const EdgeInsetsDirectional.only(start: 8),
+            child: CategoryTabBar(
+              categories: categories,
+              onTap: (selectedCategory) {
+                // currentCategory = selectedCategory;
+                setState(() {});
+                print(selectedCategory);
+              },
             ),
           ),
+          const Padding(
+            padding: EdgeInsetsDirectional.symmetric(horizontal: 24),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 12),
+                  child: Text("result found", style: BoxStyles.bold16),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [ProductCard(), ProductCard()],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [ProductCard(), ProductCard()],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [ProductCard(), ProductCard()],
+                ),
+              ],
+            ),
+          )
         ],
       );
     });

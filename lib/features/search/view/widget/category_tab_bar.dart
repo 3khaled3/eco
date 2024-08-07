@@ -1,18 +1,18 @@
 import 'package:eco/utils/colors_box.dart';
 import 'package:flutter/material.dart';
 
-class TabBarWidget extends StatefulWidget {
-  const TabBarWidget(
+class CategoryTabBar extends StatefulWidget {
+  const CategoryTabBar(
       {super.key, required this.categories, required this.onTap});
   final List<String> categories;
   final Function(String selectedCategory) onTap;
 
   @override
   // ignore: library_private_types_in_public_api
-  _TabBarWidgetState createState() => _TabBarWidgetState();
+  _CategoryTabBarState createState() => _CategoryTabBarState();
 }
 
-class _TabBarWidgetState extends State<TabBarWidget>
+class _CategoryTabBarState extends State<CategoryTabBar>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
@@ -38,7 +38,7 @@ class _TabBarWidgetState extends State<TabBarWidget>
           isScrollable: true,
           indicator: BoxDecoration(
             borderRadius: BorderRadius.circular(8.0),
-            color: BoxColors.lighterPurple,
+            color: ColorsBox.lighterPurple,
           ),
           splashBorderRadius: BorderRadius.circular(8),
           splashFactory: NoSplash.splashFactory,
@@ -49,7 +49,7 @@ class _TabBarWidgetState extends State<TabBarWidget>
           labelPadding: const EdgeInsets.symmetric(horizontal: 4),
           indicatorSize: TabBarIndicatorSize.tab,
           unselectedLabelColor:Colors.grey ,
-          labelColor: BoxColors.white,
+          labelColor: ColorsBox.white,
           indicatorPadding: const EdgeInsets.symmetric(horizontal: 4),
           onTap: (value) {
             widget.onTap(widget.categories[value]);

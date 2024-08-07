@@ -1,10 +1,12 @@
 {
-    "test" : "عربي",
+    "test": "عربي",
     "neww": "عربي جديد",
     "seeAll": "عرض الكل",
     "productName": "اسم المنتج",
     "topSelling": "أكثر مبيعاً",
     "welcome": "مرحباً",
-    "startShopping": "ابدأ التسوق الآن"
-
+    "startShopping": "ابدأ التسوق الآن",
+    "exploreCategories": "استكشف الفئات",
+    "searchEmpty": "معذرة ، لا يوجد نتائج مطابقة للبحث الخاص بك.",
+    "search": "ابحث"
 }

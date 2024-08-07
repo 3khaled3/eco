@@ -5,5 +5,8 @@
     "productName": "product name",
     "topSelling": "top selling",
     "welcome": " Welcome",
-    "startShopping": "start shopping now"
+    "startShopping": "start shopping now",
+    "exploreCategories": "explore categories",
+    "searchEmpty": "Sorry, we couldn't find any matching result for your Search.",
+    "search": "search"
 }

@@ -119,6 +119,36 @@ class GetTranslation {
       args: [],
     );
   }
+
+  /// `explore categories`
+  String get exploreCategories {
+    return Intl.message(
+      'explore categories',
+      name: 'exploreCategories',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sorry, we couldn't find any matching result for your Search.`
+  String get searchEmpty {
+    return Intl.message(
+      'Sorry, we couldn\'t find any matching result for your Search.',
+      name: 'searchEmpty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `search`
+  String get search {
+    return Intl.message(
+      'search',
+      name: 'search',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<GetTranslation> {

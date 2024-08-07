@@ -46,12 +46,12 @@ class HomeAppBar extends StatelessWidget {
             height: 40,
             width: 40,
             decoration: BoxDecoration(
-              color: BoxColors.lighterPurple,
+              color: ColorsBox.lighterPurple,
               borderRadius: BorderRadius.circular(200),
             ),
             child: const Icon(
               Icons.search,
-              color: BoxColors.white,
+              color: ColorsBox.white,
             ),
           ),
         ),
@@ -65,12 +65,12 @@ class HomeAppBar extends StatelessWidget {
             height: 40,
             width: 40,
             decoration: BoxDecoration(
-              color: BoxColors.lighterPurple,
+              color: ColorsBox.lighterPurple,
               borderRadius: BorderRadius.circular(200),
             ),
             child: const Icon(
               Icons.search,
-              color: BoxColors.white,
+              color: ColorsBox.white,
             ),
           ),
         ),

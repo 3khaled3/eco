@@ -1,3 +1,4 @@
+import 'package:eco/utils/localization/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:rxdart/rxdart.dart';
 
@@ -7,6 +8,7 @@ import 'package:rxdart/rxdart.dart';
 /// 1 second delay since the last search query change.
 class SearchTextField extends StatefulWidget {
   final void Function(String) onSearchChanged;
+  final void Function() onPressedFilter;
 
   /// Creates a debounced search text field.
   ///
@@ -14,6 +16,7 @@ class SearchTextField extends StatefulWidget {
   const SearchTextField({
     super.key,
     required this.onSearchChanged,
+    required this.onPressedFilter,
   });
 
   @override
@@ -53,12 +56,17 @@ class _SearchTextFieldState extends State<SearchTextField> {
         _debounce.add(value);
       },
       decoration: InputDecoration(
-        labelText: 'Search',
-        prefixIcon: const Icon(Icons.search),
+        hintText: GetTranslation.of(context).search,
+        hintStyle:
+            TextStyle(color: Theme.of(context).colorScheme.secondaryFixed),
+        prefixIcon: Icon(
+          Icons.search,
+          color: Theme.of(context).colorScheme.secondaryFixed,
+        ),
         suffixIcon: IconButton(
-          onPressed: () {},
-          icon: Icon(Icons.filter_alt_rounded),
-          color: Colors.red,
+          onPressed: widget.onPressedFilter,
+          icon: const Icon(Icons.filter_alt_outlined),
+          color: Theme.of(context).colorScheme.secondaryFixed,
         ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),

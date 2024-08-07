@@ -99,17 +99,17 @@ class _Rating extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: BoxColors.lighterPurple,
+        color: ColorsBox.lighterPurple,
         borderRadius: BorderRadius.circular(8),
       ),
       padding: const EdgeInsets.all(4),
       child: Row(
         children: [
-          Text("4.5", style: BoxStyles.bold12.copyWith(color: BoxColors.white)),
+          Text("4.5", style: BoxStyles.bold12.copyWith(color: ColorsBox.white)),
           const SizedBox(width: 4),
           const Icon(
             Icons.star_outline_rounded,
-            color: BoxColors.white,
+            color: ColorsBox.white,
           ),
         ],
       ),
