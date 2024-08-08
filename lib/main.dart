@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
+import 'features/cart/view/cart_view.dart';
 import 'features/home/view/categories_body.dart';
 import 'features/home/view/widget/widget_import.dart';
 import 'features/search/view/search_empty.dart';
@@ -55,7 +56,7 @@ class _HomeState extends State<Home> {
   List<Widget> pages = [
     const HomeView(),
     const SearchEmpty(),
-    const CategoriesBody(),
+    const CartView(),
     const CategoriesBody(),
   ];
   @override

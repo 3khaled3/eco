@@ -8,5 +8,6 @@
     "startShopping": "start shopping now",
     "exploreCategories": "explore categories",
     "searchEmpty": "Sorry, we couldn't find any matching result for your Search.",
-    "search": "search"
+    "search": "search",
+    "cartEmpty": "Your Cart is Empty"
 }

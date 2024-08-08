@@ -149,6 +149,16 @@ class GetTranslation {
       args: [],
     );
   }
+
+  /// `Your Cart is Empty`
+  String get cartEmpty {
+    return Intl.message(
+      'Your Cart is Empty',
+      name: 'cartEmpty',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<GetTranslation> {

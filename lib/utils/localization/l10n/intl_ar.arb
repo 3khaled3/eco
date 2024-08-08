@@ -8,5 +8,6 @@
     "startShopping": "ابدأ التسوق الآن",
     "exploreCategories": "استكشف الفئات",
     "searchEmpty": "معذرة ، لا يوجد نتائج مطابقة للبحث الخاص بك.",
-    "search": "ابحث"
+    "search": "ابحث",
+    "cartEmpty": "عربة التسوق فارغة"
 }

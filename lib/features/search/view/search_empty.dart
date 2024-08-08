@@ -1,11 +1,11 @@
 import 'package:eco/utils/Settings_state.dart';
 import 'package:eco/utils/box_styles.dart';
-import 'package:eco/utils/colors_box.dart';
 import 'package:eco/utils/images.dart';
 import 'package:eco/utils/localization/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:lottie/lottie.dart';
+import 'widget/explore_categories_button.dart';
 import 'widget/search_app_bar.dart';
 
 class SearchEmpty extends StatelessWidget {
@@ -40,27 +40,10 @@ class SearchEmpty extends StatelessWidget {
                       style: BoxStyles.regular24,
                     ),
                   ),
-                  InkWell(
-                    onTap: () {},
-                    borderRadius: const BorderRadius.all(Radius.circular(10)),
-                    child: Ink(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 24, vertical: 16),
-                      decoration: const BoxDecoration(
-                        color: ColorsBox.lighterPurple,
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                      ),
-                      child: Text(
-                        GetTranslation.of(context).exploreCategories,
-                        style:
-                            BoxStyles.regular16.copyWith(color: ColorsBox.white),
-                      ),
-                    ),
-                  ),
+                  ExploreCategoriesButton(),
                 ],
               ),
             ),
-            
             SizedBox(height: MediaQuery.sizeOf(context).height * 0.15),
           ],
         ),

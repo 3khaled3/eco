@@ -28,6 +28,7 @@ class SettingsCubit extends Cubit<SettingsState> {
     return ThemeData(
       fontFamily: lang == 'en' ? 'Montserrat' : 'NotoKufiArabic',
       primaryColor: ColorsBox.lighterPurple,
+      scaffoldBackgroundColor: ColorsBox.white,
       colorScheme: const ColorScheme.light().copyWith(
         brightness: Brightness.light,
         secondary: ColorsBox.whiteTwo,
