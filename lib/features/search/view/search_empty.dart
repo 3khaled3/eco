@@ -40,7 +40,7 @@ class SearchEmpty extends StatelessWidget {
                       style: BoxStyles.regular24,
                     ),
                   ),
-                  ExploreCategoriesButton(),
+                  const ExploreCategoriesButton(),
                 ],
               ),
             ),
