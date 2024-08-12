@@ -2,6 +2,7 @@ import 'package:eco/utils/Settings_state.dart';
 import 'package:eco/utils/box_styles.dart';
 import 'package:eco/utils/images.dart';
 import 'package:eco/utils/localization/generated/l10n.dart';
+import 'package:eco/utils/widget/custom_primary_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:lottie/lottie.dart';
@@ -39,7 +40,10 @@ class SearchEmpty extends StatelessWidget {
                       style: StylesBox.regular24,
                     ),
                   ),
-                  const ExploreCategoriesButton(),
+                  CustomPrimaryButton(
+                    title: GetTranslation.of(context).exploreCategories,
+                    onTap: () {},
+                  ),
                 ],
               ),
             ),

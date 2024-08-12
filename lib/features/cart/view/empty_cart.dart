@@ -1,7 +1,7 @@
-import 'package:eco/features/search/view/widget/widget_import.dart';
 import 'package:eco/utils/box_styles.dart';
 import 'package:eco/utils/images.dart';
 import 'package:eco/utils/localization/generated/l10n.dart';
+import 'package:eco/utils/widget/custom_primary_button.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
@@ -33,7 +33,10 @@ class EmptyCart extends StatelessWidget {
 
           /// <--------- EXPLORE CATEGORIES BUTTON ---------> ///
 
-          const ExploreCategoriesButton(),
+          CustomPrimaryButton(
+            title: GetTranslation.of(context).exploreCategories,
+            onTap: () {},
+          ),
           SizedBox(height: MediaQuery.sizeOf(context).height * 0.15),
         ],
       ),

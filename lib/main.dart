@@ -1,5 +1,6 @@
 import 'package:eco/features/Profil/view/profil_view.dart';
 import 'package:eco/features/home/view/home_view.dart';
+import 'package:eco/features/login/view/login_view.dart';
 import 'package:eco/utils/localization/generated/l10n.dart';
 import 'package:eco/utils/Settings_state.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +9,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'features/cart/view/cart_view.dart';
 import 'features/home/view/widget/widget_import.dart';
+import 'features/login/view/register_view.dart';
 import 'features/search/view/search_empty.dart';
 
 void main() {
@@ -36,7 +38,7 @@ class MyApp extends StatelessWidget {
             ],
             supportedLocales: GetTranslation.delegate.supportedLocales,
             title: 'Flutter Demo',
-            home: const Home(),
+            home: const RegisterView(),
           );
         },
       ),

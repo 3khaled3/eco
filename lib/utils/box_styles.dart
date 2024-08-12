@@ -37,7 +37,7 @@ class StylesBox {
     fontSize: 16.0,
   );
 
-  static const regular16 = TextStyle(
+  static const TextStyle regular16 = TextStyle(
     fontWeight: FontWeight.w400,
     fontSize: 16.0,
   );
@@ -68,7 +68,7 @@ class StylesBox {
     fontWeight: FontWeight.w600,
     fontSize: 18.0,
   );
-   static const semibold16 = TextStyle(
+  static const semibold16 = TextStyle(
     fontWeight: FontWeight.w600,
     fontSize: 16.0,
   );
