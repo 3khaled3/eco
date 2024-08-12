@@ -1,10 +1,9 @@
 import 'package:eco/features/home/view/widget/widget_import.dart';
-import 'package:eco/features/search/view/widget/category_tab_bar.dart';
 import 'package:eco/utils/box_styles.dart';
 import 'package:eco/utils/localization/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
-import 'widget/search_app_bar.dart';
+import 'widget/widget_import.dart';
 
 class SearchView extends StatelessWidget {
   const SearchView({super.key});
@@ -44,7 +43,7 @@ class SearchView extends StatelessWidget {
               children: [
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 12),
-                  child: Text("result found", style: BoxStyles.bold16),
+                  child: Text("result found", style: StylesBox.bold16),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,

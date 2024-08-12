@@ -34,7 +34,7 @@ class CartItem extends StatelessWidget {
 
                 Text(
                   "Product name",
-                  style: BoxStyles.bold16,
+                  style: StylesBox.bold16,
                 ),
                 SizedBox(height: 8),
 
@@ -55,7 +55,7 @@ class CartItem extends StatelessWidget {
               children: [
                 ///<----- price ----->///
 
-                const Text(" \$100", style: BoxStyles.bold12),
+                const Text(" \$100", style: StylesBox.bold12),
                 const SizedBox(
                   height: 8,
                 ),
@@ -77,7 +77,7 @@ class CartItem extends StatelessWidget {
                     const Center(
                       child: Text(
                         "   1   ",
-                        style: BoxStyles.regular12,
+                        style: StylesBox.regular12,
                       ),
                     ),
 
@@ -107,15 +107,20 @@ class _ProductDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
+        /// <---- sup info title ---->///
+
         Text(
           title,
-          style: BoxStyles.regular12.copyWith(
+          style: StylesBox.regular12.copyWith(
             color: Colors.grey,
           ),
         ),
+
+        /// <---- sup info data ---->///
+
         Text(
           data,
-          style: BoxStyles.bold12,
+          style: StylesBox.bold12,
         ),
       ],
     );
@@ -123,6 +128,8 @@ class _ProductDetails extends StatelessWidget {
 }
 
 class _CartIconButton extends StatelessWidget {
+  ///Custom cart icon button to decrease and increase quantity
+
   const _CartIconButton({required this.icon, required this.onTap});
   final IconData icon;
   final Function()? onTap;
@@ -138,6 +145,9 @@ class _CartIconButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(5555),
           color: ColorsBox.lighterPurple,
         ),
+
+        /// <---- icon ---->///
+
         child: SizedBox(
           child: Icon(
             icon,

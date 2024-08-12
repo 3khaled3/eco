@@ -12,15 +12,20 @@ class InvoiceDetails extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
+          /// <---- sup info  of Invoice title ---->///
+
           Text(
             title,
-            style: BoxStyles.regular16.copyWith(
+            style: StylesBox.regular16.copyWith(
               color: Colors.grey,
             ),
           ),
+
+          /// <---- sup info  of Invoice data ---->///
+
           Text(
             data,
-            style: BoxStyles.regular16,
+            style: StylesBox.regular16,
           ),
         ],
       ),

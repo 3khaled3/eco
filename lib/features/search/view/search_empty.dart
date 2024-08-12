@@ -5,8 +5,7 @@ import 'package:eco/utils/localization/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:lottie/lottie.dart';
-import 'widget/explore_categories_button.dart';
-import 'widget/search_app_bar.dart';
+import 'widget/widget_import.dart';
 
 class SearchEmpty extends StatelessWidget {
   const SearchEmpty({super.key});
@@ -37,7 +36,7 @@ class SearchEmpty extends StatelessWidget {
                     child: Text(
                       GetTranslation.of(context).searchEmpty,
                       textAlign: TextAlign.center,
-                      style: BoxStyles.regular24,
+                      style: StylesBox.regular24,
                     ),
                   ),
                   const ExploreCategoriesButton(),

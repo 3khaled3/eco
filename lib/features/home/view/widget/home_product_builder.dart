@@ -20,7 +20,7 @@ class HomeProductBuilder extends StatelessWidget {
           alignment: AlignmentDirectional.center,
           child: TextButton(
             onPressed: () {},
-            child: const Text("see more", style: BoxStyles.bold16),
+            child: const Text("see more", style: StylesBox.bold16),
           ),
         ),
       ],

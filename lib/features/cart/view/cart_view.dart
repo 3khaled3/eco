@@ -14,17 +14,21 @@ class CartView extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 24),
           child: Column(
             children: [
+              /// <--------- APP BAR ---------> ///
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   CustomBackButton(),
                   Text(
                     "Cart",
-                    style: BoxStyles.bold16,
+                    style: StylesBox.bold16,
                   ),
                   SizedBox(width: 48)
                 ],
               ),
+
+              /// <--------- CART BODY ---------> ///
+
               Expanded(child: EmptyCart()),
             ],
           ),

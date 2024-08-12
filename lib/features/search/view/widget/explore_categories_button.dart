@@ -1,7 +1,4 @@
-import 'package:eco/utils/box_styles.dart';
-import 'package:eco/utils/colors_box.dart';
-import 'package:eco/utils/localization/generated/l10n.dart';
-import 'package:flutter/material.dart';
+part of 'widget_import.dart';
 
 class ExploreCategoriesButton extends StatelessWidget {
   const ExploreCategoriesButton({
@@ -21,7 +18,7 @@ class ExploreCategoriesButton extends StatelessWidget {
         ),
         child: Text(
           GetTranslation.of(context).exploreCategories,
-          style: BoxStyles.regular16.copyWith(color: ColorsBox.white),
+          style: StylesBox.regular16.copyWith(color: ColorsBox.white),
         ),
       ),
     );

@@ -54,7 +54,7 @@ class FilterDorpDow extends StatelessWidget {
                           : options.isEmpty
                               ? 'noAppointment'
                               : 'selectAppointment',
-                      style: BoxStyles.bold16,
+                      style: StylesBox.bold16,
                     ),
                     Icon(
                       show
@@ -89,7 +89,7 @@ class FilterDorpDow extends StatelessWidget {
                     child: Text(
                       //call formatTime function here
                       index,
-                      style: BoxStyles.regular16.copyWith(
+                      style: StylesBox.regular16.copyWith(
                         color: selected == index
                             ? ColorsBox.lighterPurple
                             : SettingsCubit().isDarkTheme()

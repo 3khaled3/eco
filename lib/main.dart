@@ -1,3 +1,4 @@
+import 'package:eco/features/Profil/view/profil_view.dart';
 import 'package:eco/features/home/view/home_view.dart';
 import 'package:eco/utils/localization/generated/l10n.dart';
 import 'package:eco/utils/Settings_state.dart';
@@ -6,7 +7,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'features/cart/view/cart_view.dart';
-import 'features/home/view/categories_body.dart';
 import 'features/home/view/widget/widget_import.dart';
 import 'features/search/view/search_empty.dart';
 
@@ -57,7 +57,7 @@ class _HomeState extends State<Home> {
     const HomeView(),
     const SearchEmpty(),
     const CartView(),
-    const CategoriesBody(),
+    const ProfileView(),
   ];
   @override
   Widget build(BuildContext context) {

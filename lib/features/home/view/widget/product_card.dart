@@ -29,7 +29,7 @@ class ProductCard extends StatelessWidget {
                    Padding(
                     padding:
                         EdgeInsetsDirectional.only(top: 8, bottom: 8, start: 4),
-                    child: Text(GetTranslation.of(context).productName, style: BoxStyles.medium12),
+                    child: Text(GetTranslation.of(context).productName, style: StylesBox.medium12),
                   ),
 
                   /// <---- product price ---->///
@@ -39,13 +39,13 @@ class ProductCard extends StatelessWidget {
                     child: Row(
                       children: [
                         /// <---- product current price ---->///
-                        const Text(' \$200', style: BoxStyles.bold12),
+                        const Text(' \$200', style: StylesBox.bold12),
                         const SizedBox(width: 8),
 
                         /// <---- product old price ---->///
                         Text(
                           ' \$200',
-                          style: BoxStyles.medium12.copyWith(
+                          style: StylesBox.medium12.copyWith(
                             decoration: TextDecoration.lineThrough,
                             decorationColor: Colors.grey,
                             color: Colors.grey,
@@ -105,7 +105,7 @@ class _Rating extends StatelessWidget {
       padding: const EdgeInsets.all(4),
       child: Row(
         children: [
-          Text("4.5", style: BoxStyles.bold12.copyWith(color: ColorsBox.white)),
+          Text("4.5", style: StylesBox.bold12.copyWith(color: ColorsBox.white)),
           const SizedBox(width: 4),
           const Icon(
             Icons.star_outline_rounded,

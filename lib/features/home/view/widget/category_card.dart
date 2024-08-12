@@ -46,7 +46,7 @@ class CategoryCard extends StatelessWidget {
               const SizedBox(width: 16),
               Text(
                 "Categories",
-                style: BoxStyles.bold16
+                style: StylesBox.bold16
                     .copyWith(color: Theme.of(context).colorScheme.outline),
               ),
               const Spacer(),

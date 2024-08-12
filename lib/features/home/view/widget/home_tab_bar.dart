@@ -20,13 +20,13 @@ class HomeTabBar extends StatelessWidget {
         Tab(
           child: Text(
             'Home',
-            style: BoxStyles.bold16,
+            style: StylesBox.bold16,
           ),
         ),
         Tab(
           child: Text(
             'Categories',
-            style: BoxStyles.bold16,
+            style: StylesBox.bold16,
           ),
         ),
       ],

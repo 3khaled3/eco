@@ -1,7 +1,7 @@
 part of 'widget_import.dart';
 
-class PromoCodeTextFailed extends StatelessWidget {
-  const PromoCodeTextFailed({
+class PromoCodeTextField extends StatelessWidget {
+  const PromoCodeTextField({
     super.key,
   });
 
@@ -11,12 +11,16 @@ class PromoCodeTextFailed extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 12),
       child: Container(
         padding: const EdgeInsets.all(8),
+
+        ///<--------- PROMO CODE TEXT field decoration --------->///
         decoration: BoxDecoration(
           borderRadius: const BorderRadius.all(Radius.circular(8)),
           color: Theme.of(context).colorScheme.secondary,
         ),
         child: TextField(
           decoration: InputDecoration(
+            ///<--------- PROMO CODE TEXT field Suffix Icon --------->///
+
             suffixIcon: Material(
               color: Colors.transparent,
               borderRadius: BorderRadius.circular(555),
@@ -42,10 +46,15 @@ class PromoCodeTextFailed extends StatelessWidget {
                 ),
               ),
             ),
+
+            ///<--------- PROMO CODE TEXT field prefix Icon --------->///
+
             prefixIcon: const Icon(Icons.sell_outlined),
             border: InputBorder.none,
+
+            /// <--------- PROMO CODE TEXT field hint --------->///
             hintText: 'Enter Coupon Code',
-            hintStyle: BoxStyles.regular12,
+            hintStyle: StylesBox.regular12,
           ),
           style: const TextStyle(color: Colors.white),
         ),

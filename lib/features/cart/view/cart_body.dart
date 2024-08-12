@@ -12,18 +12,26 @@ class CartBody extends StatelessWidget {
     return Column(
       children: [
         const SizedBox(height: 24),
+
+        /// <--------- CLEAR all  CART BUTTON ---------> ///
+
         Align(
           alignment: AlignmentDirectional.topEnd,
           child: TextButton(
             onPressed: () {},
-            child: const Text("Clear cart", style: BoxStyles.bold16),
+            child: const Text("Clear cart", style: StylesBox.bold16),
           ),
         ),
+
+        /// <--------- CART ITEMS Builder ---------> ///
+
         Expanded(
           child: Material(
             child: ListView.separated(
                 padding: const EdgeInsets.all(0),
                 itemBuilder: (context, index) {
+                  ///<--------- CART ITEM ---------> ///
+
                   return const CartItem();
                 },
                 separatorBuilder: (context, index) =>
@@ -31,11 +39,14 @@ class CartBody extends StatelessWidget {
                 itemCount: 10),
           ),
         ),
+
+        /// <--------- INVOICE DETAILS ---------> ///
+
         const InvoiceDetails(title: "Subtotal", data: "\$ 100.00"),
         const InvoiceDetails(title: "Shipping Cost", data: "\$ 100.00"),
         const InvoiceDetails(title: " Tax", data: "\$ 100.00"),
         const InvoiceDetails(title: "Total", data: "\$ 100.00"),
-        const PromoCodeTextFailed()
+        const PromoCodeTextField()
       ],
     );
   }

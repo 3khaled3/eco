@@ -1,5 +1,4 @@
-import 'package:eco/utils/colors_box.dart';
-import 'package:flutter/material.dart';
+part of 'widget_import.dart';
 
 class CategoryTabBar extends StatefulWidget {
   const CategoryTabBar(
@@ -48,7 +47,7 @@ class _CategoryTabBarState extends State<CategoryTabBar>
           indicatorWeight: 0.1,
           labelPadding: const EdgeInsets.symmetric(horizontal: 4),
           indicatorSize: TabBarIndicatorSize.tab,
-          unselectedLabelColor:Colors.grey ,
+          unselectedLabelColor: Colors.grey,
           labelColor: ColorsBox.white,
           indicatorPadding: const EdgeInsets.symmetric(horizontal: 4),
           onTap: (value) {

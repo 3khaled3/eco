@@ -1,11 +1,4 @@
-import 'package:eco/utils/Settings_state.dart';
-import 'package:eco/utils/box_styles.dart';
-import 'package:eco/utils/colors_box.dart';
-import 'package:eco/utils/widget/back_button.dart';
-import 'package:flutter/material.dart';
-
-import 'filter_dorp_dow.dart';
-import 'search_text_faild.dart';
+part of 'widget_import.dart';
 
 class SearchAppBar extends StatelessWidget {
   const SearchAppBar({
@@ -68,13 +61,13 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
                 borderRadius: BorderRadius.circular(5555)),
           ),
           const SizedBox(height: 16),
-          const Text('Filter By', style: BoxStyles.bold24),
+          const Text('Filter By', style: StylesBox.bold24),
           const SizedBox(height: 16),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text('Price', style: BoxStyles.bold16),
-              Text('\$$_minPrice-\$$_maxPrice', style: BoxStyles.bold16),
+              const Text('Price', style: StylesBox.bold16),
+              Text('\$$_minPrice-\$$_maxPrice', style: StylesBox.bold16),
             ],
           ),
           RangeSlider(
@@ -121,7 +114,7 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
             child: Center(
               child: Text(
                 'Apply Filter',
-                style: BoxStyles.bold16.copyWith(color: ColorsBox.white),
+                style: StylesBox.bold16.copyWith(color: ColorsBox.white),
               ),
             ),
           ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class BoxStyles {
+class StylesBox {
   static const bold32 = TextStyle(
     fontWeight: FontWeight.w700,
     fontSize: 32.0,
@@ -55,5 +55,21 @@ class BoxStyles {
   static const regular12 = TextStyle(
     fontWeight: FontWeight.w400,
     fontSize: 12.0,
+  );
+  static const regular18 = TextStyle(
+    fontWeight: FontWeight.w400,
+    fontSize: 18.0,
+  );
+  static const medium18 = TextStyle(
+    fontWeight: FontWeight.w500,
+    fontSize: 18.0,
+  );
+  static const semibold18 = TextStyle(
+    fontWeight: FontWeight.w600,
+    fontSize: 18.0,
+  );
+   static const semibold16 = TextStyle(
+    fontWeight: FontWeight.w600,
+    fontSize: 16.0,
   );
 }

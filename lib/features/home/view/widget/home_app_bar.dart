@@ -26,11 +26,11 @@ class HomeAppBar extends StatelessWidget {
           children: [
             Text(
               GetTranslation.of(context).welcome,
-              style: BoxStyles.bold16,
+              style: StylesBox.bold16,
             ),
             Text(
               GetTranslation.of(context).startShopping,
-              style: BoxStyles.regular16,
+              style: StylesBox.regular16,
             ),
           ],
         ),
