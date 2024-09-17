@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "740162070861",
+    "project_id": "neweco-39308",
+    "storage_bucket": "neweco-39308.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:740162070861:android:558e0785e225ad65212f04",
+        "android_client_info": {
+          "package_name": "com.eccco.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXZ2sKFH7QX9B0Hkri1XNzsaq1gn7pxWg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
