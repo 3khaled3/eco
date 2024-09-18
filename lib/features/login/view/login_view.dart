@@ -1,13 +1,16 @@
+import 'package:eco/go_router.dart';
 import 'package:eco/utils/widget/custom_primary_button.dart';
 import 'package:eco/utils/box_styles.dart';
 import 'package:eco/utils/colors_box.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../view_model/function/validation_function.dart';
 import 'widget/widget_import.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
+  static const String routeName = '/login_view';
 
   @override
   Widget build(BuildContext context) {
@@ -103,6 +106,7 @@ class LoginView extends StatelessWidget {
         title: "Login",
         titleStyle: StylesBox.bold16.copyWith(color: ColorsBox.white),
         onTap: () {
+          context.go(AppRoutes.kHomeRoute);
           if (formKey.currentState?.validate() ?? false) {
             // Handle successful validation with BLoC or other state management
           }

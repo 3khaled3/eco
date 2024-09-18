@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:eco/utils/widget/custom_primary_button.dart';
 import 'package:eco/utils/box_styles.dart';
@@ -9,6 +8,7 @@ import 'widget/widget_import.dart';
 
 class RegisterView extends StatefulWidget {
   const RegisterView({super.key});
+  static const String routeName = '/register_view';
 
   @override
   State<RegisterView> createState() => _RegisterViewState();
@@ -20,14 +20,6 @@ class _RegisterViewState extends State<RegisterView> {
 
   @override
   Widget build(BuildContext context) {
-    try {
-      FirebaseFirestore.instance.collection("cities").doc("eg").set({
-        "cities": ["cairo", "giza", "alex"]
-      });
-    } catch (e) {
-      print("Error: $e");
-    }
-
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(

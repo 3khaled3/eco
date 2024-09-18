@@ -7,6 +7,8 @@ import 'widget/widget_import.dart';
 class ProfileView extends StatelessWidget {
   const ProfileView({super.key});
 
+  static const String routeName = '/profile_view';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

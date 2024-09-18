@@ -11,6 +11,8 @@ import 'widget/widget_import.dart';
 class SearchEmpty extends StatelessWidget {
   const SearchEmpty({super.key});
 
+  static const String routeName = '/search_empty';
+
   @override
   Widget build(BuildContext context) {
     return StatefulBuilder(builder: (BuildContext context, setState) {

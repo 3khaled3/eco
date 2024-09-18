@@ -6,6 +6,7 @@ import 'widget/widget_import.dart';
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
 
+  static const String routeName = '/home_view';
   @override
   State<HomeView> createState() => _HomeViewState();
 }

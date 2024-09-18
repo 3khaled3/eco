@@ -8,6 +8,7 @@ import 'widget/widget_import.dart';
 class SearchView extends StatelessWidget {
   const SearchView({super.key});
 
+  static const String routeName = '/search_view';
   @override
   Widget build(BuildContext context) {
     // String? currentCategory;
