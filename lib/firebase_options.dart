@@ -52,7 +52,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyAXZ2sKFH7QX9B0Hkri1XNzsaq1gn7pxWg',
-    appId: '1:740162070861:android:558e0785e225ad65212f04',
+    appId: '1:740162070861:android:5b152b23b56c2e85212f04',
     messagingSenderId: '740162070861',
     projectId: 'neweco-39308',
     storageBucket: 'neweco-39308.appspot.com',
@@ -85,4 +85,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'neweco-39308.appspot.com',
     measurementId: 'G-QERG2JQ67S',
   );
+
 }
