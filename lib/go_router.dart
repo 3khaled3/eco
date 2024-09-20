@@ -3,8 +3,8 @@ import 'package:eco/features/product_management/view_model/cubit/add_product_cub
 import 'package:eco/features/cart/view/cart_view.dart';
 import 'package:eco/features/home/view/home_view.dart';
 import 'package:eco/features/home/view/widget/bottom_nav_bar_widget.dart';
-import 'package:eco/features/login/view/login_view.dart';
-import 'package:eco/features/login/view/register_view.dart';
+import 'package:eco/features/authentication/view/pages/login_view.dart';
+import 'package:eco/features/authentication/view/pages/register_view.dart';
 import 'package:eco/features/search/view/search_empty.dart';
 import 'package:eco/features/search/view/search_view.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
