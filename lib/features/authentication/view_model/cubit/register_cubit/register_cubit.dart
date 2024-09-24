@@ -12,7 +12,14 @@ class RegisterCubit extends Cubit<RegisterState> {
     final result = await _authService.registerWithEmail(email, password);
     result.fold(
       (l) => emit(RegisterFailure(message: l)),
-      (r) => emit(RegisterSuccess()),
+      (r) async {
+        ///<--- add user data to firestore --->///
+        final result = await _authService.setUser(r);
+        result.fold(
+          (l) => emit(RegisterFailure(message: l)),
+          (r) => emit(RegisterSuccess()),
+        );
+      },
     );
   }
 

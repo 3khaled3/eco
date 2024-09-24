@@ -34,4 +34,9 @@ class AuthRepository {
   Future<Either<String, UserModel>> getCurrentUser(String uid) async {
     return _authService.getCurrentUser(uid);
   }
+
+  Future<Either<String, UserModel>> setUser(
+      User user) async {
+    return _authService.setUser( user);
+  }
 }

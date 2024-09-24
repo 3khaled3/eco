@@ -12,6 +12,8 @@ import 'package:eco/features/search/view/search_view.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
+import 'features/authentication/view/pages/forgot_password_view.dart';
+import 'features/authentication/view_model/cubit/forgetPassword_cubit/forget_password_cubit.dart';
 import 'features/product_management/view/pages/add_product.dart';
 
 abstract class AppRoutes {
@@ -22,6 +24,7 @@ abstract class AppRoutes {
   static const String kProfileRoute = ProfileView.routeName;
   static const String kSearchRoute = SearchView.routeName;
   static const String kAddProductRoute = AddProductView.routeName;
+  static const String kForgotPasswordRoute = ForgetPasswordView.routeName;
 
 // Define your GoRouter
   static GoRouter router = GoRouter(
@@ -34,6 +37,15 @@ abstract class AppRoutes {
           create: (context) => LoginCubit(),
           child: LoginView(),
         ),
+        routes: [
+          GoRoute(
+            path: kForgotPasswordRoute,
+            builder: (context, state) => BlocProvider(
+              create: (context) => ForgetPasswordCubit(),
+              child: const ForgetPasswordView(),
+            ),
+          ),
+        ],
       ),
       GoRoute(
         path: kAddProductRoute,
@@ -44,8 +56,15 @@ abstract class AppRoutes {
       ),
       GoRoute(
         path: kRegisterRoute,
-        builder: (context, state) => BlocProvider(
-          create: (context) => RegisterCubit(),
+        builder: (context, state) => MultiBlocProvider(
+          providers: [
+            BlocProvider(
+              create: (context) => LoginCubit(),
+            ),
+            BlocProvider(
+              create: (context) => RegisterCubit(),
+            ),
+          ],
           child: RegisterView(),
         ),
       ),

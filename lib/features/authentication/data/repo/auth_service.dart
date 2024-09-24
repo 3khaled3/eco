@@ -128,4 +128,49 @@ class AuthService {
       return Left("Error fetching user data: $e");
     }
   }
+
+  Future<Either<String, UserModel>> setUser(User user) async {
+    try {
+      ///<--- Get user data from the database --->///
+      DocumentSnapshot userDoc = await FirebaseFirestore.instance
+          .collection("users")
+          .doc(user.uid)
+          .get();
+
+      /// <-- Check if the user exists in the database -->
+      if (!(userDoc.exists && userDoc.data() != null)) {
+        UserModel userModel = UserModel(
+          id: user.uid,
+          username: user.displayName ?? ' ',
+          email: user.email!,
+          userType: UserType.user,
+          phoneNumber: user.phoneNumber ?? " ",
+          profileImage: user.photoURL ?? " ",
+          createdAt: DateTime.now(),
+          favList: [],
+          orderHistory: [],
+        );
+        await user.sendEmailVerification();
+
+        FirebaseFirestore.instance
+            .collection("users")
+            .doc(user.uid)
+            .set(userModel.toJson());
+
+        ///< --- Return the user in the Right side (success) -->///
+        return Right(userModel);
+      } else {
+        Map<String, dynamic> userData = userDoc.data() as Map<String, dynamic>;
+
+        /// <-- Convert the Map to a UserModel --->///
+        UserModel user = UserModel.fromJson(userData);
+
+        ///< --- Return the user in the Right side (success) -->///
+        return Right(user);
+      }
+    } catch (e) {
+      /// <--- Return error message in the Left side (failure) --->///
+      return Left("Error set user data: $e");
+    }
+  }
 }

@@ -92,7 +92,10 @@ class LoginView extends StatelessWidget {
                       Align(
                         alignment: AlignmentDirectional.centerEnd,
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            context.go(AppRoutes.kLoginRoute +"/"+
+                                AppRoutes.kForgotPasswordRoute);
+                          },
                           child: Text(
                             "Forgot password?",
                             style: StylesBox.regular16.copyWith(
