@@ -2,7 +2,6 @@ part of 'widget_import.dart';
 
 class BuildRegisterText extends StatelessWidget {
   const BuildRegisterText({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -15,7 +14,9 @@ class BuildRegisterText extends StatelessWidget {
           ),
         ),
         TextButton(
-          onPressed: () {},
+          onPressed: () {
+            context.go(AppRoutes.kRegisterRoute);
+          },
           child: Text(
             "Sign up",
             style: StylesBox.bold16.copyWith(
