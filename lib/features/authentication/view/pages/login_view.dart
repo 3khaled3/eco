@@ -1,5 +1,6 @@
 import 'package:eco/features/authentication/view_model/cubit/login_cubit/login_cubit.dart';
 import 'package:eco/go_router.dart';
+import 'package:eco/utils/Settings_state.dart';
 import 'package:eco/utils/widget/custom_primary_button.dart';
 import 'package:eco/utils/box_styles.dart';
 import 'package:eco/utils/colors_box.dart';
@@ -20,23 +21,39 @@ class LoginView extends StatelessWidget {
     String email = '';
     String password = '';
 
-    return BlocBuilder<LoginCubit, LoginState>(
-      builder: (context, state) {
-        if (state is LoginLoading) {
-          return const Center(child: CircularProgressIndicator());
-        }
-        if (state is LoginError) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(state.error),
-            ),
-          );
-        }
-        if (state is LoginSuccess) {
-          context.go(AppRoutes.kHomeRoute);
-        }
-        return Scaffold(
-          body: SafeArea(
+    return Scaffold(
+      body: BlocBuilder<LoginCubit, LoginState>(
+        builder: (context, state) {
+          if (state is LoginLoading) {
+            return const Center(child: CircularProgressIndicator());
+          }
+
+          if (state is LoginError) {
+            // Schedule a post-frame callback to show the SnackBar
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              print("eeeerorr: ${state.error}");
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(state.error),
+                ),
+              );
+            });
+          }
+
+          if (state is LoginSuccess) {
+            // Navigate to the home route
+            BlocProvider.of<SettingsCubit>(context).setUser(state.user);
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  content: Text("Login Successful"),
+                ),
+              );
+              context.go(AppRoutes.kHomeRoute);
+            });
+          }
+
+          return SafeArea(
             child: SingleChildScrollView(
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -58,7 +75,6 @@ class LoginView extends StatelessWidget {
                         hintText: 'Enter your email',
                         validator: validateEmail,
                         onChanged: (value) {
-                          print('Email changed: $value');
                           email = value;
                         },
                       ),
@@ -70,7 +86,6 @@ class LoginView extends StatelessWidget {
                         isPassword: true,
                         validator: validatePassword,
                         onChanged: (value) {
-                          print('Password changed: $value');
                           password = value;
                         },
                       ),
@@ -125,15 +140,15 @@ class LoginView extends StatelessWidget {
                             color: Theme.of(context).colorScheme.secondaryFixed,
                           ),
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),
               ),
             ),
-          ),
-        );
-      },
+          );
+        },
+      ),
     );
   }
 }

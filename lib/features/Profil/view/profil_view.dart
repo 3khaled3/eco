@@ -1,3 +1,4 @@
+import 'package:eco/features/authentication/data/user_model.dart';
 import 'package:eco/utils/Settings_state.dart';
 import 'package:eco/utils/box_styles.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +12,7 @@ class ProfileView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    UserModel? user = BlocProvider.of<SettingsCubit>(context).user;
     return Scaffold(
       body: Column(
         children: [
@@ -22,7 +24,7 @@ class ProfileView extends StatelessWidget {
                 children: [
                   ///<--------- USER INFORMATION --------->///
                   const ProfileImage(),
-                  const UserInformation(),
+                  UserInformation(user: user!),
 
                   ///<--------- SETTINGS buttons to change theme --------->///
                   Padding(

@@ -5,6 +5,7 @@ class ProfileImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    UserModel? user = BlocProvider.of<SettingsCubit>(context).user;
     return SizedBox(
       height: MediaQuery.sizeOf(context).width * .4,
       width: MediaQuery.sizeOf(context).width * .4,
@@ -15,10 +16,12 @@ class ProfileImage extends StatelessWidget {
           ///<--------- USER IMAGE --------->///
 
           ClipOval(
-            child: Image.asset(
-              AssetsBox.userAvatar,
-              fit: BoxFit.cover,
-            ),
+            child: user!.profileImage == null
+                ? Image.asset(
+                    AssetsBox.userAvatar,
+                    fit: BoxFit.cover,
+                  )
+                : CachedNetworkImage(imageUrl: user.profileImage!),
           ),
 
           ///<--------- CAMERA ICON BUTTON to edit image --------->///

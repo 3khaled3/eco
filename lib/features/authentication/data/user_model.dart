@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 enum UserType {
   user("user"),
   guest("guest"),
@@ -41,8 +43,9 @@ class UserModel {
       profileImage: json['profileImage'],
       phoneNumber: json['phoneNumber'],
       address: json['address'],
-      createdAt:
-          json['createdAt'] != null ? DateTime.parse(json['createdAt']) : null,
+      createdAt: json['createdAt'] is Timestamp
+          ? (json['createdAt'] as Timestamp).toDate()
+          : null,
       orderHistory: json['orderHistory'] != null
           ? List<String>.from(json['orderHistory'])
           : null,

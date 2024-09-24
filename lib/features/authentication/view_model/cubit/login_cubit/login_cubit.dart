@@ -43,6 +43,7 @@ class LoginCubit extends Cubit<LoginState> {
   Future<void> _getCurrentUser(String uid) async {
     ///<---- Login success ---->
     ///<---- Get current user ---->
+    print("Get current user: $uid");
     final currentUser = await _authRepo.getCurrentUser(uid);
     currentUser.fold(
       ///<---- Get current user error ---->

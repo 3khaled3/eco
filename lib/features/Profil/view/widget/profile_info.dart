@@ -1,8 +1,8 @@
 part of 'widget_import.dart';
 
 class UserInformation extends StatefulWidget {
-  ///Custom Profile Information
-  const UserInformation({super.key});
+  final UserModel user;
+  const UserInformation({super.key, required this.user});
 
   @override
   State<UserInformation> createState() => _UserInformationState();
@@ -11,20 +11,20 @@ class UserInformation extends StatefulWidget {
 class _UserInformationState extends State<UserInformation> {
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.all(8),
+    return Padding(
+      padding: const EdgeInsets.all(8),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           ///<--------- USER NAME --------->///
           Text(
-            "Khaled",
+            widget.user.username,
             style: StylesBox.semibold18,
           ),
 
           ///<--------- USER phone --------->///
           Text(
-            "ss",
+            widget.user.email,
             style: StylesBox.medium16,
           ),
         ],
