@@ -1,3 +1,4 @@
+import 'package:eco/features/authentication/data/user_model.dart';
 import 'package:eco/utils/colors_box.dart';
 import 'package:flutter/material.dart';
 import 'package:bloc/bloc.dart';
@@ -5,8 +6,26 @@ import 'package:bloc/bloc.dart';
 class SettingsState {
   final Locale locale;
   final ThemeData theme;
+  final UserModel? user; // User can now be null
 
-  SettingsState({required this.locale, required this.theme});
+  SettingsState({
+    required this.locale,
+    required this.theme,
+    this.user, // Allow user to be optional
+  });
+
+  // Create a copyWith method to allow easy state updates
+  SettingsState copyWith({
+    Locale? locale,
+    ThemeData? theme,
+    UserModel? user,
+  }) {
+    return SettingsState(
+      locale: locale ?? this.locale,
+      theme: theme ?? this.theme,
+      user: user ?? this.user,
+    );
+  }
 }
 
 class SettingsCubit extends Cubit<SettingsState> {
@@ -17,10 +36,13 @@ class SettingsCubit extends Cubit<SettingsState> {
   }
 
   SettingsCubit._internal()
-      : super(SettingsState(
-          locale: const Locale('en'),
-          theme: _getLightTheme('en'),
-        ));
+      : super(
+          SettingsState(
+            locale: const Locale('en'),
+            theme: _getLightTheme('en'),
+            user: null, // Initially null user
+          ),
+        );
 
   bool isDarkTheme() => state.theme.brightness == Brightness.dark;
 
@@ -50,6 +72,14 @@ class SettingsCubit extends Cubit<SettingsState> {
     );
   }
 
+  // Getter for user
+  UserModel? get user => state.user;
+
+  // Setter for user
+  void setUser(UserModel? newUser) {
+    emit(state.copyWith(user: newUser));
+  }
+
   void toggleLanguage() {
     final newLocale = state.locale.languageCode == 'en'
         ? const Locale('ar')
@@ -57,13 +87,13 @@ class SettingsCubit extends Cubit<SettingsState> {
     final newTheme = state.theme.brightness == Brightness.light
         ? _getLightTheme(newLocale.languageCode)
         : _getDarkTheme(newLocale.languageCode);
-    emit(SettingsState(locale: newLocale, theme: newTheme));
+    emit(state.copyWith(locale: newLocale, theme: newTheme));
   }
 
   void toggleTheme() {
     final newTheme = state.theme.brightness == Brightness.dark
         ? _getLightTheme(state.locale.languageCode)
         : _getDarkTheme(state.locale.languageCode);
-    emit(SettingsState(locale: state.locale, theme: newTheme));
+    emit(state.copyWith(theme: newTheme));
   }
 }

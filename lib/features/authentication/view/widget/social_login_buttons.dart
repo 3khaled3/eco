@@ -9,12 +9,16 @@ class SocialLoginButtons extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const SocialLoginButton(
+        SocialLoginButton(
+          onTap: () async {
+            await BlocProvider.of<LoginCubit>(context).loginWithGoogle();
+          },
           icon: Icon(EvaIcons.google, color: Color(0xffd62d20)),
           title: "Continue with Google",
         ),
         const SizedBox(height: 10),
         SocialLoginButton(
+          onTap: () {},
           icon: Icon(EvaIcons.facebook, color: Colors.blue.shade800),
           title: "Continue with Facebook",
         ),
@@ -24,10 +28,15 @@ class SocialLoginButtons extends StatelessWidget {
 }
 
 class SocialLoginButton extends StatelessWidget {
-  const SocialLoginButton({super.key, required this.icon, required this.title});
+  const SocialLoginButton(
+      {super.key,
+      required this.icon,
+      required this.title,
+      required this.onTap});
 
   final Widget icon;
   final String title;
+  final void Function() onTap;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -39,7 +48,7 @@ class SocialLoginButton extends StatelessWidget {
         ),
         title: title,
         titleStyle: StylesBox.semibold16,
-        onTap: () {},
+        onTap: onTap,
       ),
     );
   }

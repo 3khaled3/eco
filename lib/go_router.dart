@@ -1,4 +1,6 @@
 import 'package:eco/features/Profil/view/profil_view.dart';
+import 'package:eco/features/authentication/view_model/cubit/login_cubit/login_cubit.dart';
+import 'package:eco/features/authentication/view_model/cubit/register_cubit/register_cubit.dart';
 import 'package:eco/features/product_management/view_model/cubit/add_product_cubit.dart';
 import 'package:eco/features/cart/view/cart_view.dart';
 import 'package:eco/features/home/view/home_view.dart';
@@ -23,12 +25,15 @@ abstract class AppRoutes {
 
 // Define your GoRouter
   static GoRouter router = GoRouter(
-    // initialLocation: kLoginRoute,
-    initialLocation: kAddProductRoute,
+    initialLocation: kLoginRoute,
+    // initialLocation: kAddProductRoute,
     routes: [
       GoRoute(
         path: kLoginRoute,
-        builder: (context, state) => LoginView(),
+        builder: (context, state) => BlocProvider(
+          create: (context) => LoginCubit(),
+          child: LoginView(),
+        ),
       ),
       GoRoute(
         path: kAddProductRoute,
@@ -39,7 +44,10 @@ abstract class AppRoutes {
       ),
       GoRoute(
         path: kRegisterRoute,
-        builder: (context, state) => RegisterView(),
+        builder: (context, state) => BlocProvider(
+          create: (context) => RegisterCubit(),
+          child: RegisterView(),
+        ),
       ),
       ShellRoute(
         builder: (context, state, child) {
@@ -47,9 +55,10 @@ abstract class AppRoutes {
         },
         routes: [
           GoRoute(
-            path: kHomeRoute,
-            builder: (context, state) => HomeView(),
-          ),
+              path: kHomeRoute,
+              builder: (context, state) {
+                return const HomeView();
+              }),
           GoRoute(
             path: kCartRoute,
             builder: (context, state) => CartView(),

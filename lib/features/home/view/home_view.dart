@@ -1,3 +1,5 @@
+import 'package:eco/features/authentication/data/user_model.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'categories_body.dart';
 import 'home_body.dart';

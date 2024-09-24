@@ -83,12 +83,7 @@ class _RegisterViewState extends State<RegisterView> {
                   const SizedBox(height: 10),
                   _buildPrimaryButton(context),
                   const SizedBox(height: 10),
-                  Text(
-                    "Don’t have an account? Sign in",
-                    style: StylesBox.regular16.copyWith(
-                      color: Theme.of(context).colorScheme.secondaryFixed,
-                    ),
-                  ),
+                  const BuildLoginText(),
                   const SizedBox(height: 10),
                   Text(
                     "Or",
