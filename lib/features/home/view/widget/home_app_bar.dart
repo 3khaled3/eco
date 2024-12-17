@@ -1,4 +1,10 @@
-part of 'widget_import.dart';
+import 'package:eco/features/profile/view/profile_view.dart';
+import 'package:eco/utils/colors_box.dart';
+import 'package:eco/utils/extensions.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
+import 'package:eco/utils/box_styles.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class HomeAppBar extends StatelessWidget {
   const HomeAppBar({
@@ -7,29 +13,28 @@ class HomeAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final user = FirebaseAuth.instance.currentUser;
+
     return Row(
       children: [
         /// <---- user image ---->///
         InkWell(
-          onTap: () {},
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const ProfileView()));
+          },
           borderRadius: BorderRadius.circular(99999),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(999999),
-            child: CachedNetworkImage(
-              imageUrl: FirebaseAuth.instance.currentUser?.photoURL ??
-                  AssetsBox.userAvatar,
-              height: 40,
-              width: 40,
-              placeholder: (context, url) => const Center(
-                child: CircularProgressIndicator(),
-              ),
-              errorWidget: (context, url, error) => Image.asset(
-                AssetsBox.userAvatar,
-                height: 40,
-                width: 40,
-                fit: BoxFit.cover,
-              ),
-              fit: BoxFit.cover,
+          child: SizedBox(
+            height: 40,
+            width: 40,
+            child: CircleAvatar(
+              backgroundColor: Colors.blueAccent.withOpacity(0.2),
+              child: user?.photoURL == null
+                  ? const Icon(
+                      Icons.person,
+                      color: Colors.blueAccent,
+                    )
+                  : CachedNetworkImage(imageUrl: user?.photoURL ?? "s"),
             ),
           ),
         ),
@@ -41,7 +46,7 @@ class HomeAppBar extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "welcome ${FirebaseAuth.instance.currentUser!.displayName ?? " "}",
+              "welcome ${user!.displayName ?? " "}",
               style: StylesBox.bold16,
             ),
             const Text(

@@ -1,7 +1,8 @@
+import 'package:eco/features/home/view/widget/home_app_bar.dart';
+import 'package:eco/features/home/view/widget/home_tab_bar.dart';
 import 'package:flutter/material.dart';
 import 'categories_body.dart';
 import 'home_body.dart';
-import 'widget/widget_import.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});

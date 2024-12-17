@@ -1,4 +1,7 @@
-part of 'widget_import.dart';
+import 'package:eco/utils/colors_box.dart';
+import 'package:eco/utils/extensions.dart';
+import 'package:flutter/material.dart';
+import 'package:eco/utils/images.dart';
 
 class ImageSlider extends StatefulWidget {
   const ImageSlider({super.key});

@@ -1,4 +1,8 @@
-part of 'widget_import.dart';
+import 'package:eco/utils/colors_box.dart';
+import 'package:eco/utils/extensions.dart';
+import 'package:flutter/material.dart';
+import 'package:eco/utils/box_styles.dart';
+import 'package:eco/utils/images.dart';
 
 class ProductCard extends StatelessWidget {
   const ProductCard({super.key});

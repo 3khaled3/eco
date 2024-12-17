@@ -30,6 +30,14 @@ abstract class StylesBox {
     fontWeight: FontWeight.w500,
     fontSize: 12.0,
   );
+  static const semibold18 = TextStyle(
+    fontWeight: FontWeight.w600,
+    fontSize: 18.0,
+  );
+  static const semibold22 = TextStyle(
+    fontWeight: FontWeight.w600,
+    fontSize: 22.0,
+  );
 
   static const semibold16 = TextStyle(
     fontWeight: FontWeight.w600,

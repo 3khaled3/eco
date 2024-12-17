@@ -1,4 +1,8 @@
-part of 'widget_import.dart';
+import 'package:eco/features/home/view/widget/product_card.dart';
+import 'package:eco/features/home/view/widget/show_all_row.dart';
+import 'package:eco/utils/extensions.dart';
+import 'package:flutter/material.dart';
+import 'package:eco/utils/box_styles.dart';
 
 class HomeProductBuilder extends StatelessWidget {
   const HomeProductBuilder({super.key, required this.categoryTitle});

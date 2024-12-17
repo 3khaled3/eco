@@ -1,4 +1,5 @@
-part of 'widget_import.dart';
+import 'package:flutter/material.dart';
+import 'package:eco/utils/box_styles.dart';
 
 class HomeTabBar extends StatelessWidget {
   const HomeTabBar({
