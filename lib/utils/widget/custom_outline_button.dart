@@ -8,13 +8,9 @@ class CustomOutlineButton extends StatelessWidget {
     required this.title,
     required this.icon,
     required this.onTap,
-    this.padding = const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-    this.titleStyle,
   });
   final String title;
-  final TextStyle? titleStyle;
   final Function() onTap;
-  final EdgeInsetsGeometry padding;
   final Widget icon;
   @override
   Widget build(BuildContext context) {
@@ -22,7 +18,7 @@ class CustomOutlineButton extends StatelessWidget {
       onTap: onTap,
       borderRadius: const BorderRadius.all(Radius.circular(10)),
       child: Ink(
-        padding: padding,
+        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
         decoration: BoxDecoration(
           border: Border.all(
             width: 1.5,
@@ -35,8 +31,7 @@ class CustomOutlineButton extends StatelessWidget {
             icon,
             Text(
               title,
-              style: titleStyle ??
-                  StylesBox.regular16.copyWith(color: ColorsBox.white),
+              style: StylesBox.semibold16,
             ),
           ],
         ),

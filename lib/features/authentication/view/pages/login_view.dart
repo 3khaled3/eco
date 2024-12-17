@@ -72,7 +72,7 @@ class LoginView extends StatelessWidget {
                       (MediaQuery.sizeOf(context).height * .1).ph,
                       const InputLabel(text: "Enter your email"),
                       10.ph,
-                      LoginTextField(
+                      CustomTextFailed(
                         hintText: 'Enter your email',
                         validator: validateEmail,
                         onChanged: (value) {
@@ -82,7 +82,7 @@ class LoginView extends StatelessWidget {
                       18.ph,
                       const InputLabel(text: "Enter your password"),
                       10.ph,
-                      LoginTextField(
+                      CustomTextFailed(
                         hintText: 'Enter your password',
                         isPassword: true,
                         validator: validatePassword,
@@ -115,8 +115,6 @@ class LoginView extends StatelessWidget {
                         width: double.infinity,
                         child: CustomPrimaryButton(
                           title: "Login",
-                          titleStyle:
-                              StylesBox.bold16.copyWith(color: ColorsBox.white),
                           onTap: () {
                             if (formKey.currentState?.validate() ?? false) {
                               loginCubit.loginWithEmail(email, password);
@@ -129,9 +127,8 @@ class LoginView extends StatelessWidget {
                       10.ph,
                       Text(
                         "Or",
-                        style: StylesBox.bold16.copyWith(
-                          color: Colors.grey[600],
-                        ),
+                        style:
+                            StylesBox.bold16.copyWith(color: Colors.grey[600]),
                       ),
                       10.ph,
                       const SocialLoginButtons(),

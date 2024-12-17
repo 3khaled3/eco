@@ -34,11 +34,12 @@ class SocialLoginButtons extends StatelessWidget {
 }
 
 class SocialLoginButton extends StatelessWidget {
-  const SocialLoginButton(
-      {super.key,
-      required this.icon,
-      required this.title,
-      required this.onTap});
+  const SocialLoginButton({
+    super.key,
+    required this.icon,
+    required this.title,
+    required this.onTap,
+  });
 
   final Widget icon;
   final String title;
@@ -53,7 +54,6 @@ class SocialLoginButton extends StatelessWidget {
           child: icon,
         ),
         title: title,
-        titleStyle: StylesBox.semibold16,
         onTap: onTap,
       ),
     );

@@ -7,20 +7,16 @@ class CustomPrimaryButton extends StatelessWidget {
     super.key,
     required this.title,
     required this.onTap,
-    this.padding = const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-    this.titleStyle,
   });
   final String title;
-  final TextStyle? titleStyle;
   final Function() onTap;
-  final EdgeInsetsGeometry padding;
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
       borderRadius: const BorderRadius.all(Radius.circular(10)),
       child: Ink(
-        padding: padding,
+        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
         decoration: const BoxDecoration(
           color: ColorsBox.lighterPurple,
           borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -28,8 +24,7 @@ class CustomPrimaryButton extends StatelessWidget {
         child: Center(
           child: Text(
             title,
-            style: titleStyle ??
-                StylesBox.regular16.copyWith(color: ColorsBox.white),
+            style: StylesBox.bold16.copyWith(color: ColorsBox.white),
           ),
         ),
       ),

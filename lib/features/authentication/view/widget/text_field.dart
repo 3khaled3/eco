@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class LoginTextField extends StatefulWidget {
+class CustomTextFailed extends StatefulWidget {
   final Function(String)? onChanged;
   final Function(String?) validator;
   final bool isPassword;
   final String hintText;
 
-  const LoginTextField({
+  const CustomTextFailed({
     super.key,
     this.onChanged,
     required this.validator,
@@ -15,10 +15,10 @@ class LoginTextField extends StatefulWidget {
   });
 
   @override
-  State<LoginTextField> createState() => _LoginTextFieldState();
+  State<CustomTextFailed> createState() => _CustomTextFailedState();
 }
 
-class _LoginTextFieldState extends State<LoginTextField> {
+class _CustomTextFailedState extends State<CustomTextFailed> {
   bool _obscureText = true;
 
   void _toggleVisibility() {

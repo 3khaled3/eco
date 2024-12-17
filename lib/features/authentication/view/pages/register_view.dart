@@ -64,7 +64,7 @@ class _RegisterViewState extends State<RegisterView> {
                       (MediaQuery.sizeOf(context).height * .05).ph,
                       const InputLabel(text: "Enter your email"),
                       10.ph,
-                      LoginTextField(
+                      CustomTextFailed(
                         hintText: 'Enter your email',
                         validator: validateEmail,
                         onChanged: (value) {
@@ -77,7 +77,7 @@ class _RegisterViewState extends State<RegisterView> {
                       18.ph,
                       const InputLabel(text: "Enter your password"),
                       10.ph,
-                      LoginTextField(
+                      CustomTextFailed(
                         hintText: 'Enter your password',
                         isPassword: true,
                         validator: validatePassword,
@@ -91,7 +91,7 @@ class _RegisterViewState extends State<RegisterView> {
                       18.ph,
                       const InputLabel(text: "Re-Enter your password"),
                       10.ph,
-                      LoginTextField(
+                      CustomTextFailed(
                         hintText: 'Re-Enter your password',
                         isPassword: true,
                         validator: (value) =>
@@ -130,7 +130,6 @@ class _RegisterViewState extends State<RegisterView> {
       width: double.infinity,
       child: CustomPrimaryButton(
         title: "Register",
-        titleStyle: StylesBox.bold16.copyWith(color: ColorsBox.white),
         onTap: () async {
           if (_formKey.currentState?.validate() ?? false) {
             await registerCubit.registerWithEmail(_email, _password);
