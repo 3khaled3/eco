@@ -1,3 +1,4 @@
+import 'package:eco/features/authentication/view/widget/text_field.dart';
 import 'package:eco/features/authentication/view_model/forgetPassword_cubit/forget_password_cubit.dart';
 import 'package:eco/utils/extensions.dart';
 import 'package:flutter/material.dart';
@@ -65,11 +66,8 @@ class ForgetPasswordView extends StatelessWidget {
                       style: StylesBox.regular16,
                     ),
                     40.ph,
-                    TextFormField(
-                      decoration: const InputDecoration(
-                        labelText: "Email",
-                        border: OutlineInputBorder(),
-                      ),
+                    CustomTextFailed(
+                      hintText: "Email",
                       validator: validateEmail,
                       onChanged: (value) {
                         email = value;

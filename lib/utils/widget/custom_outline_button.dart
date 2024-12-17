@@ -1,5 +1,4 @@
 import 'package:eco/utils/box_styles.dart';
-import 'package:eco/utils/colors_box.dart';
 import 'package:flutter/material.dart';
 
 class CustomOutlineButton extends StatelessWidget {
@@ -20,9 +19,7 @@ class CustomOutlineButton extends StatelessWidget {
       child: Ink(
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
         decoration: BoxDecoration(
-          border: Border.all(
-            width: 1.5,
-          ),
+          border: Border.all(width: 1.5),
           borderRadius: const BorderRadius.all(Radius.circular(10)),
         ),
         child: Row(

@@ -8,8 +8,6 @@ import 'package:eco/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:eco/utils/widget/custom_primary_button.dart';
 import 'package:eco/utils/box_styles.dart';
-import 'package:eco/utils/colors_box.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../view_model/function/validation_function.dart';

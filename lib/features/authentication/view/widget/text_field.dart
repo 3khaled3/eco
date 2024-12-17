@@ -37,6 +37,7 @@ class _CustomTextFailedState extends State<CustomTextFailed> {
           borderRadius: BorderRadius.all(Radius.circular(10)),
         ),
         hintText: widget.hintText,
+        labelText: widget.hintText,
         suffixIcon: widget.isPassword
             ? IconButton(
                 icon: Icon(

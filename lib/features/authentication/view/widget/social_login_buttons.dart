@@ -3,7 +3,6 @@ import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 
 import 'package:eco/features/authentication/view_model/login_cubit/login_cubit.dart';
-import 'package:eco/utils/box_styles.dart';
 import 'package:eco/utils/widget/custom_outline_button.dart';
 
 class SocialLoginButtons extends StatelessWidget {

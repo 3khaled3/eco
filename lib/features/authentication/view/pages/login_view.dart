@@ -8,7 +8,6 @@ import 'package:eco/features/home/view/home_view.dart';
 import 'package:eco/utils/extensions.dart';
 import 'package:eco/utils/widget/custom_primary_button.dart';
 import 'package:eco/utils/box_styles.dart';
-import 'package:eco/utils/colors_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
