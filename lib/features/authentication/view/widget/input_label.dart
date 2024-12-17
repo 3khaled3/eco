@@ -12,7 +12,7 @@ class InputLabel extends StatelessWidget {
       child: Text(
         text,
         style: StylesBox.medium16.copyWith(
-          color: Theme.of(context).colorScheme.secondaryFixed,
+          color: Colors.grey[600],
         ),
       ),
     );

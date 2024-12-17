@@ -1,5 +1,5 @@
-
 part of 'widget_import.dart';
+
 class ImageSlider extends StatefulWidget {
   const ImageSlider({super.key});
 
@@ -43,7 +43,7 @@ class ImageSliderState extends State<ImageSlider> {
               itemBuilder: (_, index) {
                 return InkWell(
                   onTap: () => print('Tapped on image $index'),
-                  child: Image.asset(banners[index], fit: BoxFit.cover,),
+                  child: Image.asset(banners[index], fit: BoxFit.cover),
                 );
               },
             ),

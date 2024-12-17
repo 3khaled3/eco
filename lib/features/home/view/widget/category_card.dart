@@ -1,4 +1,5 @@
 part of 'widget_import.dart';
+
 class CategoryCard extends StatelessWidget {
   const CategoryCard({super.key});
 
@@ -6,32 +7,23 @@ class CategoryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 8),
-      child: ElevatedButton(
-        onPressed: () {},
-        style: ButtonStyle(
-          shape: WidgetStateProperty.all<OutlinedBorder>(
-            const RoundedRectangleBorder(
-              borderRadius: BorderRadiusDirectional.only(
-                topStart: Radius.circular(100),
-                bottomStart: Radius.circular(100),
-                bottomEnd: Radius.circular(16),
-                topEnd: Radius.circular(16),
-              ),
-            ),
-          ),
-          padding: const WidgetStatePropertyAll(EdgeInsets.zero),
-        ),
+      child: InkWell(
+        onTap: () {},
+        borderRadius: const BorderRadius.all(Radius.circular(16)),
         child: Ink(
-          decoration: BoxDecoration(
-            color: Theme.of(context).colorScheme.secondary,
-            borderRadius: const BorderRadiusDirectional.only(
-              topStart: Radius.circular(100),
-              bottomStart: Radius.circular(100),
-              bottomEnd: Radius.circular(16),
-              topEnd: Radius.circular(16),
+          decoration: const BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(16)),
+            gradient: LinearGradient(
+              colors: [
+                ColorsBox.lighterShade,
+                ColorsBox.lighterPurple,
+                ColorsBox.darkerPurple,
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
             ),
           ),
-          padding: EdgeInsets.all(8),
+          padding: const EdgeInsets.all(8),
           child: Row(
             children: [
               ClipRRect(
@@ -46,12 +38,10 @@ class CategoryCard extends StatelessWidget {
               const SizedBox(width: 16),
               Text(
                 "Categories",
-                style: StylesBox.bold16
-                    .copyWith(color: Theme.of(context).colorScheme.outline),
+                style: StylesBox.bold16.copyWith(color: ColorsBox.white),
               ),
               const Spacer(),
-              Icon(Icons.chevron_right_rounded,
-                  color: Theme.of(context).colorScheme.outline),
+              const Icon(Icons.chevron_right_rounded, color: ColorsBox.white),
               const SizedBox(width: 8),
             ],
           ),

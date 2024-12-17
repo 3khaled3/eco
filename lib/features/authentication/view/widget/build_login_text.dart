@@ -10,17 +10,20 @@ class BuildLoginText extends StatelessWidget {
         Text(
           "Already have an account?",
           style: StylesBox.regular16.copyWith(
-            color: Theme.of(context).colorScheme.secondaryFixed,
+            color: Colors.grey[600],
           ),
         ),
         TextButton(
           onPressed: () {
-            context.go(AppRoutes.kLoginRoute);
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => const LoginView()),
+            );
           },
           child: Text(
             "Sign in",
             style: StylesBox.bold16.copyWith(
-              color: Theme.of(context).colorScheme.secondaryFixed,
+              color: Colors.black,
             ),
           ),
         ),

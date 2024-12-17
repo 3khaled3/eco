@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:eco/utils/box_styles.dart';
 import 'package:eco/utils/widget/custom_primary_button.dart';
-import 'package:go_router/go_router.dart';
 import '../../view_model/function/validation_function.dart';
 
 class ForgetPasswordView extends StatelessWidget {
@@ -14,12 +13,14 @@ class ForgetPasswordView extends StatelessWidget {
   Widget build(BuildContext context) {
     final formKey = GlobalKey<FormState>();
     String email = '';
+    ForgetPasswordCubit forgetPasswordCubit = ForgetPasswordCubit();
 
     return Scaffold(
       appBar: AppBar(
         title: const Text('Forgot Password'),
       ),
       body: BlocConsumer<ForgetPasswordCubit, ForgetPasswordState>(
+        bloc: forgetPasswordCubit,
         listener: (context, state) {
           if (state is ForgetPasswordError) {
             WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -36,7 +37,7 @@ class ForgetPasswordView extends StatelessWidget {
                   content: Text("Password reset email sent!"),
                 ),
               );
-              GoRouter.of(context).pop();
+              Navigator.of(context).pop();
             });
           }
         },
@@ -81,8 +82,7 @@ class ForgetPasswordView extends StatelessWidget {
                         title: "Reset Password",
                         onTap: () {
                           if (formKey.currentState?.validate() ?? false) {
-                            BlocProvider.of<ForgetPasswordCubit>(context)
-                                .forgetPassword(email);
+                            forgetPasswordCubit.forgetPassword(email);
                           }
                         },
                       ),

@@ -11,7 +11,7 @@ class SocialLoginButtons extends StatelessWidget {
       children: [
         SocialLoginButton(
           onTap: () async {
-            await BlocProvider.of<LoginCubit>(context).loginWithGoogle();
+            await LoginCubit().loginWithGoogle();
           },
           icon: Icon(EvaIcons.google, color: Color(0xffd62d20)),
           title: "Continue with Google",

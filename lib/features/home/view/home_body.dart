@@ -11,8 +11,8 @@ class HomeBody extends StatelessWidget {
       children: const [
         ImageSlider(),
         SizedBox(height: 8),
-        HomeProductBuilder(),
-        HomeProductBuilder(),
+        HomeProductBuilder(categoryTitle: "New Arrivals"),
+        HomeProductBuilder(categoryTitle: "Top Selling"),
       ],
     );
   }

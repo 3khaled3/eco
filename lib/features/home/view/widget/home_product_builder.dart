@@ -1,12 +1,13 @@
 part of 'widget_import.dart';
-class HomeProductBuilder extends StatelessWidget {
-  const HomeProductBuilder({super.key});
 
+class HomeProductBuilder extends StatelessWidget {
+  const HomeProductBuilder({super.key, required this.categoryTitle});
+  final String categoryTitle;
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const ShowAllRow(),
+        ShowAllRow(title: categoryTitle),
         const Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [ProductCard(), ProductCard()],

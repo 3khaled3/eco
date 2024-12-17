@@ -1,9 +1,7 @@
-import 'package:eco/go_router.dart';
-import 'package:eco/utils/localization/generated/l10n.dart';
-import 'package:eco/utils/Settings_state.dart';
+import 'package:eco/features/authentication/view/pages/login_view.dart';
+import 'package:eco/features/home/view/home_view.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
@@ -19,27 +17,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(create: (context) => SettingsCubit()),
-      ],
-      child: BlocBuilder<SettingsCubit, SettingsState>(
-        builder: (context, state) {
-          return MaterialApp.router(
-            routerConfig: AppRoutes.router,
-            theme: state.theme,
-            locale: state.locale,
-            localizationsDelegates: const [
-              GetTranslation.delegate,
-              GlobalMaterialLocalizations.delegate,
-              GlobalWidgetsLocalizations.delegate,
-              GlobalCupertinoLocalizations.delegate,
-            ],
-            supportedLocales: GetTranslation.delegate.supportedLocales,
-            title: 'Flutter Demo',
-          );
-        },
-      ),
+    return MaterialApp(
+      title: 'Flutter Demo',
+      home: FirebaseAuth.instance.currentUser == null
+          ? const LoginView()
+          : const HomeView(),
     );
   }
 }

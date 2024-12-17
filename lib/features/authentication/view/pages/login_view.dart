@@ -1,12 +1,11 @@
+import 'package:eco/features/authentication/view/pages/forgot_password_view.dart';
 import 'package:eco/features/authentication/view_model/cubit/login_cubit/login_cubit.dart';
-import 'package:eco/go_router.dart';
-import 'package:eco/utils/Settings_state.dart';
+import 'package:eco/features/home/view/home_view.dart';
 import 'package:eco/utils/widget/custom_primary_button.dart';
 import 'package:eco/utils/box_styles.dart';
 import 'package:eco/utils/colors_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
 
 import '../../view_model/function/validation_function.dart';
 import '../widget/widget_import.dart';
@@ -20,9 +19,11 @@ class LoginView extends StatelessWidget {
     final formKey = GlobalKey<FormState>();
     String email = '';
     String password = '';
+    LoginCubit loginCubit = LoginCubit();
 
     return Scaffold(
       body: BlocBuilder<LoginCubit, LoginState>(
+        bloc: loginCubit,
         builder: (context, state) {
           if (state is LoginLoading) {
             return const Center(child: CircularProgressIndicator());
@@ -41,15 +42,15 @@ class LoginView extends StatelessWidget {
           }
 
           if (state is LoginSuccess) {
-            // Navigate to the home route
-            BlocProvider.of<SettingsCubit>(context).setUser(state.user);
             WidgetsBinding.instance.addPostFrameCallback((_) {
               ScaffoldMessenger.of(context).showSnackBar(
                 const SnackBar(
                   content: Text("Login Successful"),
                 ),
               );
-              context.go(AppRoutes.kHomeRoute);
+              //todo nav to home page
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (context) => const HomeView()));
             });
           }
 
@@ -93,14 +94,18 @@ class LoginView extends StatelessWidget {
                         alignment: AlignmentDirectional.centerEnd,
                         child: TextButton(
                           onPressed: () {
-                            context.go(AppRoutes.kLoginRoute +"/"+
-                                AppRoutes.kForgotPasswordRoute);
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    const ForgetPasswordView(),
+                              ),
+                            );
                           },
                           child: Text(
                             "Forgot password?",
                             style: StylesBox.regular16.copyWith(
-                              color:
-                                  Theme.of(context).colorScheme.secondaryFixed,
+                              color: Colors.grey[600],
                             ),
                           ),
                         ),
@@ -114,8 +119,7 @@ class LoginView extends StatelessWidget {
                               StylesBox.bold16.copyWith(color: ColorsBox.white),
                           onTap: () {
                             if (formKey.currentState?.validate() ?? false) {
-                              BlocProvider.of<LoginCubit>(context)
-                                  .loginWithEmail(email, password);
+                              loginCubit.loginWithEmail(email, password);
                             }
                           },
                         ),
@@ -126,7 +130,7 @@ class LoginView extends StatelessWidget {
                       Text(
                         "Or",
                         style: StylesBox.bold16.copyWith(
-                          color: Theme.of(context).colorScheme.secondaryFixed,
+                          color: Colors.grey[600],
                         ),
                       ),
                       const SizedBox(height: 10),
@@ -134,13 +138,16 @@ class LoginView extends StatelessWidget {
                       const SizedBox(height: 10),
                       TextButton(
                         onPressed: () {
-                          context.go(AppRoutes.kHomeRoute);
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const HomeView()));
                         },
                         child: Text(
                           "Continue as Guest",
                           style: StylesBox.bold16.copyWith(
                             decoration: TextDecoration.underline,
-                            color: Theme.of(context).colorScheme.secondaryFixed,
+                            color: Colors.black,
                           ),
                         ),
                       ),

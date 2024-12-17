@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 class ColorsBox {
   static const lighterPurple = Color(0xff8e6cef);
+  static const darkerPurple = Color(0xff5e3bb7);
+  static const lighterShade = Color(0xffbfa7f5);
   static const white50 = Color(0x80ffffff);
   static const white = Color(0xffffffff);
   static const orangeyRed = Color(0xfffa3636);

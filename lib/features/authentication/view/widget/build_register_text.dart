@@ -10,17 +10,20 @@ class BuildRegisterText extends StatelessWidget {
         Text(
           "Don't have an account?",
           style: StylesBox.regular16.copyWith(
-            color: Theme.of(context).colorScheme.secondaryFixed,
+            color: Colors.grey[600],
           ),
         ),
         TextButton(
           onPressed: () {
-            context.go(AppRoutes.kRegisterRoute);
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const RegisterView()),
+            );
           },
           child: Text(
             "Sign up",
             style: StylesBox.bold16.copyWith(
-              color: Theme.of(context).colorScheme.secondaryFixed,
+              color: Colors.black,
             ),
           ),
         ),

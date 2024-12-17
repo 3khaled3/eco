@@ -21,10 +21,13 @@ class _RegisterViewState extends State<RegisterView> {
   String _password = '';
   String _email = '';
 
+  final RegisterCubit registerCubit = RegisterCubit();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: BlocConsumer<RegisterCubit, RegisterState>(
+        bloc: registerCubit,
         listener: (context, state) {
           if (state is RegisterSuccess) {
             WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -107,7 +110,7 @@ class _RegisterViewState extends State<RegisterView> {
                       Text(
                         "Or",
                         style: StylesBox.bold16.copyWith(
-                          color: Theme.of(context).colorScheme.secondaryFixed,
+                          color: Colors.grey[600],
                         ),
                       ),
                       const SizedBox(height: 10),
@@ -132,8 +135,7 @@ class _RegisterViewState extends State<RegisterView> {
         titleStyle: StylesBox.bold16.copyWith(color: ColorsBox.white),
         onTap: () async {
           if (_formKey.currentState?.validate() ?? false) {
-            await BlocProvider.of<RegisterCubit>(context)
-                .registerWithEmail(_email, _password);
+            await registerCubit.registerWithEmail(_email, _password);
           }
         },
       ),

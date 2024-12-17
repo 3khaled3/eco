@@ -10,14 +10,30 @@ class HomeAppBar extends StatelessWidget {
     return Row(
       children: [
         /// <---- user image ---->///
-        ClipOval(
-          child: Image.asset(
-            AssetsBox.userAvatar,
-            height: 40,
-            width: 40,
-            fit: BoxFit.cover,
+        InkWell(
+          onTap: () {},
+          borderRadius: BorderRadius.circular(99999),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(999999),
+            child: CachedNetworkImage(
+              imageUrl: FirebaseAuth.instance.currentUser?.photoURL ??
+                  AssetsBox.userAvatar,
+              height: 40,
+              width: 40,
+              placeholder: (context, url) => const Center(
+                child: CircularProgressIndicator(),
+              ),
+              errorWidget: (context, url, error) => Image.asset(
+                AssetsBox.userAvatar,
+                height: 40,
+                width: 40,
+                fit: BoxFit.cover,
+              ),
+              fit: BoxFit.cover,
+            ),
           ),
         ),
+
         const SizedBox(width: 10),
 
         ///<----- user name ----->///
@@ -25,21 +41,21 @@ class HomeAppBar extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              GetTranslation.of(context).welcome,
+              "welcome ${FirebaseAuth.instance.currentUser!.displayName ?? " "}",
               style: StylesBox.bold16,
             ),
-            Text(
-              GetTranslation.of(context).startShopping,
+            const Text(
+              "start Shopping",
               style: StylesBox.regular16,
             ),
           ],
         ),
         const Spacer(),
 
-        /// <---- search button ---->///
+        /// <---- team info button ---->///
         InkWell(
           onTap: () {
-            BlocProvider.of<SettingsCubit>(context).toggleTheme();
+            // todo add team info page
           },
           borderRadius: BorderRadius.circular(200),
           child: Ink(
@@ -50,26 +66,7 @@ class HomeAppBar extends StatelessWidget {
               borderRadius: BorderRadius.circular(200),
             ),
             child: const Icon(
-              Icons.search,
-              color: ColorsBox.white,
-            ),
-          ),
-        ),
-        //todo!! : used to test ui while developing " needed to remove"
-        InkWell(
-          onTap: () {
-            BlocProvider.of<SettingsCubit>(context).toggleLanguage();
-          },
-          borderRadius: BorderRadius.circular(200),
-          child: Ink(
-            height: 40,
-            width: 40,
-            decoration: BoxDecoration(
-              color: ColorsBox.lighterPurple,
-              borderRadius: BorderRadius.circular(200),
-            ),
-            child: const Icon(
-              Icons.search,
+              Icons.info_outline_rounded,
               color: ColorsBox.white,
             ),
           ),
