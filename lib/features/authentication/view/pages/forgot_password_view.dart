@@ -68,6 +68,7 @@ class ForgetPasswordView extends StatelessWidget {
                     40.ph,
                     CustomTextFailed(
                       hintText: "Email",
+                      labelText: "Email",
                       validator: validateEmail,
                       onChanged: (value) {
                         email = value;

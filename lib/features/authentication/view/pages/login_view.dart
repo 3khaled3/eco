@@ -73,6 +73,7 @@ class LoginView extends StatelessWidget {
                       10.ph,
                       CustomTextFailed(
                         hintText: 'Enter your email',
+                        labelText: "Email",
                         validator: validateEmail,
                         onChanged: (value) {
                           email = value;
@@ -83,6 +84,7 @@ class LoginView extends StatelessWidget {
                       10.ph,
                       CustomTextFailed(
                         hintText: 'Enter your password',
+                        labelText: "Password",
                         isPassword: true,
                         validator: validatePassword,
                         onChanged: (value) {

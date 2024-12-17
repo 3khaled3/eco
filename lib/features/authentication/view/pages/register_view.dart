@@ -64,6 +64,7 @@ class _RegisterViewState extends State<RegisterView> {
                       10.ph,
                       CustomTextFailed(
                         hintText: 'Enter your email',
+                        labelText: "email",
                         validator: validateEmail,
                         onChanged: (value) {
                           setState(() {
@@ -77,6 +78,7 @@ class _RegisterViewState extends State<RegisterView> {
                       10.ph,
                       CustomTextFailed(
                         hintText: 'Enter your password',
+                        labelText: "password",
                         isPassword: true,
                         validator: validatePassword,
                         onChanged: (value) {
@@ -91,6 +93,7 @@ class _RegisterViewState extends State<RegisterView> {
                       10.ph,
                       CustomTextFailed(
                         hintText: 'Re-Enter your password',
+                        labelText: "password",
                         isPassword: true,
                         validator: (value) =>
                             validatePasswordConfirmation(value, _password),

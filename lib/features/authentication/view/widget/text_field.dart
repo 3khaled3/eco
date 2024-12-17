@@ -5,6 +5,7 @@ class CustomTextFailed extends StatefulWidget {
   final Function(String?) validator;
   final bool isPassword;
   final String hintText;
+  final String labelText;
 
   const CustomTextFailed({
     super.key,
@@ -12,6 +13,7 @@ class CustomTextFailed extends StatefulWidget {
     required this.validator,
     this.isPassword = false,
     required this.hintText,
+    required this.labelText,
   });
 
   @override
@@ -37,7 +39,7 @@ class _CustomTextFailedState extends State<CustomTextFailed> {
           borderRadius: BorderRadius.all(Radius.circular(10)),
         ),
         hintText: widget.hintText,
-        labelText: widget.hintText,
+        labelText: widget.labelText,
         suffixIcon: widget.isPassword
             ? IconButton(
                 icon: Icon(
