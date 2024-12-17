@@ -1,4 +1,5 @@
-import 'package:eco/features/authentication/view_model/cubit/forgetPassword_cubit/forget_password_cubit.dart';
+import 'package:eco/features/authentication/view_model/forgetPassword_cubit/forget_password_cubit.dart';
+import 'package:eco/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:eco/utils/box_styles.dart';
@@ -6,8 +7,7 @@ import 'package:eco/utils/widget/custom_primary_button.dart';
 import '../../view_model/function/validation_function.dart';
 
 class ForgetPasswordView extends StatelessWidget {
-  const ForgetPasswordView({Key? key}) : super(key: key);
-  static const String routeName = 'forget_password_view';
+  const ForgetPasswordView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -54,17 +54,17 @@ class ForgetPasswordView extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const SizedBox(height: 20),
+                    20.ph,
                     const Text(
                       "Reset Password",
                       style: StylesBox.bold32,
                     ),
-                    const SizedBox(height: 20),
+                    20.ph,
                     const Text(
                       "Enter your email address and we'll send you a link to reset your password.",
                       style: StylesBox.regular16,
                     ),
-                    const SizedBox(height: 40),
+                    40.ph,
                     TextFormField(
                       decoration: const InputDecoration(
                         labelText: "Email",
@@ -75,7 +75,7 @@ class ForgetPasswordView extends StatelessWidget {
                         email = value;
                       },
                     ),
-                    const SizedBox(height: 20),
+                    20.ph,
                     SizedBox(
                       width: double.infinity,
                       child: CustomPrimaryButton(
@@ -87,7 +87,7 @@ class ForgetPasswordView extends StatelessWidget {
                         },
                       ),
                     ),
-                    const SizedBox(height: 20),
+                    20.ph,
                     if (state is ForgetPasswordError)
                       Text(
                         state.error,

@@ -83,17 +83,6 @@ class AuthService {
     }
   }
 
-  Future<Either<String, void>> verifyEmail(User user) async {
-    try {
-      if (!user.emailVerified) {
-        await user.sendEmailVerification();
-      }
-      return const Right(null);
-    } on FirebaseAuthException catch (e) {
-      return Left(e.message ?? 'An unknown error occurred');
-    }
-  }
-
   Future<Either<String, void>> signOut() async {
     try {
       await _firebaseAuth.signOut();

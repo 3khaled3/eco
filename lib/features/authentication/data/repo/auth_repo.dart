@@ -23,10 +23,6 @@ class AuthRepository {
     return _authService.resetPassword(email);
   }
 
-  Future<Either<String, void>> verifyEmail(User user) {
-    return _authService.verifyEmail(user);
-  }
-
   Future<Either<String, void>> signOut() {
     return _authService.signOut();
   }
@@ -35,8 +31,7 @@ class AuthRepository {
     return _authService.getCurrentUser(uid);
   }
 
-  Future<Either<String, UserModel>> setUser(
-      User user) async {
-    return _authService.setUser( user);
+  Future<Either<String, UserModel>> setUser(User user) async {
+    return _authService.setUser(user);
   }
 }

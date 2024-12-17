@@ -34,7 +34,7 @@ class HomeAppBar extends StatelessWidget {
           ),
         ),
 
-        const SizedBox(width: 10),
+        10.pw,
 
         ///<----- user name ----->///
         Column(

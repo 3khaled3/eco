@@ -24,10 +24,8 @@ class CustomOutlineButton extends StatelessWidget {
       child: Ink(
         padding: padding,
         decoration: BoxDecoration(
-          // color: ColorsBox.lighterPurple,
           border: Border.all(
             width: 1.5,
-            // color: Theme.of(context).colorScheme.primaryFixed,
           ),
           borderRadius: const BorderRadius.all(Radius.circular(10)),
         ),

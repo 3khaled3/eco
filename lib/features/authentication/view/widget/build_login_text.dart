@@ -1,4 +1,6 @@
-part of 'widget_import.dart';
+import 'package:flutter/material.dart';
+import 'package:eco/features/authentication/view/pages/login_view.dart';
+import 'package:eco/utils/box_styles.dart';
 
 class BuildLoginText extends StatelessWidget {
   const BuildLoginText({super.key});

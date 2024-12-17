@@ -1,4 +1,6 @@
-part of 'widget_import.dart';
+import 'package:flutter/material.dart';
+import 'package:eco/features/authentication/view/pages/register_view.dart';
+import 'package:eco/utils/box_styles.dart';
 
 class BuildRegisterText extends StatelessWidget {
   const BuildRegisterText({super.key});

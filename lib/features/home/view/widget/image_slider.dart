@@ -33,7 +33,7 @@ class ImageSliderState extends State<ImageSlider> {
       return Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const SizedBox(height: 20),
+          20.ph,
           SizedBox(
             height: 100,
             child: PageView.builder(
@@ -48,7 +48,7 @@ class ImageSliderState extends State<ImageSlider> {
               },
             ),
           ),
-          const SizedBox(height: 10),
+          10.ph,
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [...dots],

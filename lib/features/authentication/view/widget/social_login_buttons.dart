@@ -1,4 +1,10 @@
-part of 'widget_import.dart';
+import 'package:eco/utils/extensions.dart';
+import 'package:eva_icons_flutter/eva_icons_flutter.dart';
+import 'package:flutter/material.dart';
+
+import 'package:eco/features/authentication/view_model/login_cubit/login_cubit.dart';
+import 'package:eco/utils/box_styles.dart';
+import 'package:eco/utils/widget/custom_outline_button.dart';
 
 class SocialLoginButtons extends StatelessWidget {
   const SocialLoginButtons({
@@ -13,10 +19,10 @@ class SocialLoginButtons extends StatelessWidget {
           onTap: () async {
             await LoginCubit().loginWithGoogle();
           },
-          icon: Icon(EvaIcons.google, color: Color(0xffd62d20)),
+          icon: const Icon(EvaIcons.google, color: Color(0xffd62d20)),
           title: "Continue with Google",
         ),
-        const SizedBox(height: 10),
+        10.ph,
         SocialLoginButton(
           onTap: () {},
           icon: Icon(EvaIcons.facebook, color: Colors.blue.shade800),

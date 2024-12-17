@@ -40,7 +40,7 @@ class ProductCard extends StatelessWidget {
                         children: [
                           /// <---- product current price ---->///
                           const Text(' \$200', style: StylesBox.bold12),
-                          const SizedBox(width: 8),
+                          8.pw,
 
                           /// <---- product old price ---->///
                           Text(
@@ -107,7 +107,7 @@ class _Rating extends StatelessWidget {
       child: Row(
         children: [
           Text("4.5", style: StylesBox.bold12.copyWith(color: ColorsBox.white)),
-          const SizedBox(width: 4),
+          4.pw,
           const Icon(
             Icons.star_outline_rounded,
             color: ColorsBox.white,

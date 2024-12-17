@@ -1,6 +1,11 @@
 import 'package:eco/features/authentication/view/pages/forgot_password_view.dart';
-import 'package:eco/features/authentication/view_model/cubit/login_cubit/login_cubit.dart';
+import 'package:eco/features/authentication/view/widget/build_register_text.dart';
+import 'package:eco/features/authentication/view/widget/input_label.dart';
+import 'package:eco/features/authentication/view/widget/social_login_buttons.dart';
+import 'package:eco/features/authentication/view/widget/text_field.dart';
+import 'package:eco/features/authentication/view_model/login_cubit/login_cubit.dart';
 import 'package:eco/features/home/view/home_view.dart';
+import 'package:eco/utils/extensions.dart';
 import 'package:eco/utils/widget/custom_primary_button.dart';
 import 'package:eco/utils/box_styles.dart';
 import 'package:eco/utils/colors_box.dart';
@@ -8,11 +13,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../view_model/function/validation_function.dart';
-import '../widget/widget_import.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
-  static const String routeName = '/login_view';
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +51,6 @@ class LoginView extends StatelessWidget {
                   content: Text("Login Successful"),
                 ),
               );
-              //todo nav to home page
               Navigator.pushReplacement(context,
                   MaterialPageRoute(builder: (context) => const HomeView()));
             });
@@ -62,16 +64,14 @@ class LoginView extends StatelessWidget {
                   key: formKey,
                   child: Column(
                     children: [
-                      const SizedBox(height: 20),
+                      20.ph,
                       const Text(
                         "Login",
                         style: StylesBox.bold32,
                       ),
-                      SizedBox(
-                        height: MediaQuery.sizeOf(context).height * .1,
-                      ),
+                      (MediaQuery.sizeOf(context).height * .1).ph,
                       const InputLabel(text: "Enter your email"),
-                      const SizedBox(height: 10),
+                      10.ph,
                       LoginTextField(
                         hintText: 'Enter your email',
                         validator: validateEmail,
@@ -79,9 +79,9 @@ class LoginView extends StatelessWidget {
                           email = value;
                         },
                       ),
-                      const SizedBox(height: 18),
+                      18.ph,
                       const InputLabel(text: "Enter your password"),
-                      const SizedBox(height: 10),
+                      10.ph,
                       LoginTextField(
                         hintText: 'Enter your password',
                         isPassword: true,
@@ -110,7 +110,7 @@ class LoginView extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const SizedBox(height: 10),
+                      10.ph,
                       SizedBox(
                         width: double.infinity,
                         child: CustomPrimaryButton(
@@ -124,18 +124,18 @@ class LoginView extends StatelessWidget {
                           },
                         ),
                       ),
-                      const SizedBox(height: 10),
+                      10.ph,
                       const BuildRegisterText(),
-                      const SizedBox(height: 10),
+                      10.ph,
                       Text(
                         "Or",
                         style: StylesBox.bold16.copyWith(
                           color: Colors.grey[600],
                         ),
                       ),
-                      const SizedBox(height: 10),
+                      10.ph,
                       const SocialLoginButtons(),
-                      const SizedBox(height: 10),
+                      10.ph,
                       TextButton(
                         onPressed: () {
                           Navigator.pushReplacement(

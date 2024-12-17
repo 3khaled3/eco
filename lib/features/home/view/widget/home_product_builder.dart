@@ -12,10 +12,13 @@ class HomeProductBuilder extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [ProductCard(), ProductCard()],
         ),
-        const SizedBox(height: 10),
+        10.ph,
         const Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [ProductCard(), ProductCard()],
+          children: [
+            ProductCard(),
+            ProductCard(),
+          ],
         ),
         Align(
           alignment: AlignmentDirectional.center,
