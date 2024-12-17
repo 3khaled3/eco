@@ -1,3 +1,4 @@
+import 'package:eco/features/authentication/view/pages/login_view.dart';
 import 'package:eco/features/profile/view/profile_view.dart';
 import 'package:eco/utils/colors_box.dart';
 import 'package:eco/utils/extensions.dart';
@@ -20,8 +21,16 @@ class HomeAppBar extends StatelessWidget {
         /// <---- user image ---->///
         InkWell(
           onTap: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const ProfileView()));
+            if (user != null) {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const ProfileView()));
+            } else {
+              Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(builder: (context) => const LoginView()),
+                (Route<dynamic> route) => false,
+              );
+            }
           },
           borderRadius: BorderRadius.circular(99999),
           child: SizedBox(
@@ -46,7 +55,7 @@ class HomeAppBar extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "welcome ${user!.displayName ?? " "}",
+              "welcome ${user?.displayName ?? " "}",
               style: StylesBox.bold16,
             ),
             const Text(

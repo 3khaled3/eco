@@ -18,7 +18,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Eco Shop',
+      debugShowCheckedModeBanner: false,
       home: FirebaseAuth.instance.currentUser == null
           ? const LoginView()
           : const HomeView(),
