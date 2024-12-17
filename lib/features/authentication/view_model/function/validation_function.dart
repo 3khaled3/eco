@@ -16,15 +16,6 @@ String? validateEmail(String? value) {
   return null;
 }
 
-String? validateUserName(String? value) {
-  if (value == null || value.isEmpty) {
-    return 'Please enter your user name';
-  } else if (value.length < 3) {
-    return 'User name must be at least 3 characters long';
-  }
-  return null;
-}
-
 String? validatePasswordConfirmation(String? value, String password) {
   if (value == null || value.isEmpty) {
     return 'Please re-enter your password';
